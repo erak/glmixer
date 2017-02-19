@@ -18,14 +18,14 @@ output_stream::~output_stream()
 	threads_.join_all();
 }
 
-void output_stream::post(const size_t size)
+void output_stream::post(const QImage& image)
 {
-    io_service_->post(boost::bind(&output_stream::stream, this, size));
+    io_service_->post(boost::bind(&output_stream::write, this, image));
 }
 
-void output_stream::stream(const size_t size)
+void output_stream::write(const QImage& image)
 {
-    log("stream()");
+    auto bits = image.bits();
 }
 
 void output_stream::run()

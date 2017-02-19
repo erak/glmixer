@@ -8,19 +8,21 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 
+#include <QImage>
+
 class output_stream {
 
 public:
     output_stream();
     ~output_stream();
 
-    void post(const size_t size);
+    void post(const QImage& image);
 
 private:
     void log(const std::string message) const;
     void run();
     
-    void stream(const size_t size);    
+    void write(const QImage& image);    
 
     std::shared_ptr<boost::asio::io_service>        io_service_;
     std::shared_ptr<boost::asio::io_service::work>  work_;
