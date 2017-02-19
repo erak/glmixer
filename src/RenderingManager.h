@@ -28,6 +28,8 @@
 
 #include "SourceSet.h"
 
+#include <output_stream.h>
+
 typedef enum {
     QUALITY_VGA = 0,
     QUALITY_PAL,
@@ -52,12 +54,6 @@ standardAspectRatio doubleToAspectRatio(double ar);
 #include <QDomElement>
 #include <QtSvg>
 #include <QUrl>
-
-#include <V4l2Output.h>
-
-#include <boost/asio.hpp>
-
-using boost::asio::ip::udp;
 
 class QGLFramebufferObject;
 class VideoFile;
@@ -323,10 +319,8 @@ protected:
 #ifdef GLM_SPOUT
     bool _spoutEnabled, _spoutInitialized;
 #endif
-    V4l2Output* _videoOutput;
-    
-    boost::asio::io_service _io_service;
-    udp::socket _socket;
+
+    output_stream stream_;
 
     static bool blit_fbo_extension, pbo_extension;
     static QSize sizeOfFrameBuffer[ASPECT_RATIO_FREE][QUALITY_UNSUPPORTED];

@@ -85,11 +85,6 @@ Source::RTTI RenderingSource::type = Source::RENDERING_SOURCE;
 #include <QGLFramebufferObject>
 #include <QElapsedTimer>
 
-#include <boost/array.hpp>
-#include <boost/asio.hpp>
-
-using boost::asio::ip::udp;
-
 
 // static members
 RenderingManager *RenderingManager::_instance = 0;
@@ -177,7 +172,7 @@ void RenderingManager::deleteInstance() {
 }
 
 RenderingManager::RenderingManager() :
-    QObject(), _fbo(NULL), previousframe_fbo(NULL), pbo_index(0), pbo_nextIndex(0), previousframe_index(0), previousframe_delay(1), clearWhite(false), maxtexturewidth(TEXTURE_REQUIRED_MAXIMUM), maxtextureheight(TEXTURE_REQUIRED_MAXIMUM), renderingQuality(QUALITY_VGA), renderingAspectRatio(ASPECT_RATIO_4_3), _scalingMode(Source::SCALE_CROP), _playOnDrop(true), paused(false), maxSourceCount(0), _socket(_io_service, udp::endpoint(udp::v4(), 1312))
+    QObject(), _fbo(NULL), previousframe_fbo(NULL), pbo_index(0), pbo_nextIndex(0), previousframe_index(0), previousframe_delay(1), clearWhite(false), maxtexturewidth(TEXTURE_REQUIRED_MAXIMUM), maxtextureheight(TEXTURE_REQUIRED_MAXIMUM), renderingQuality(QUALITY_VGA), renderingAspectRatio(ASPECT_RATIO_4_3), _scalingMode(Source::SCALE_CROP), _playOnDrop(true), paused(false), maxSourceCount(0)
 {
     // idenfity for event
     setObjectName("RenderingManager");
@@ -224,8 +219,7 @@ RenderingManager::RenderingManager() :
     _spoutInitialized = false;
 #endif
 
-    // V4L2DeviceParameters param("/dev/video1", V4L2_PIX_FMT_VP8, maxtexturewidth, maxtextureheight, _renderwidget->getFramerate(), true);
-    // _videoOutput = V4l2Output::create(param, V4l2Access::IOTYPE_MMAP);
+    // stream_.start();
     
 
 #ifdef GLM_UNDO
@@ -256,6 +250,7 @@ RenderingManager::~RenderingManager() {
     if (_switcher)
         delete _switcher;
 
+    // stream_.stop();
 
     qDebug() << "RenderingManager" << QChar(124).toLatin1() << "All clear.";
 }
@@ -568,31 +563,7 @@ void RenderingManager::postRenderToFrameBuffer() {
 
 #endif // SPOUT
 
-    // V4l2
-    auto buffer = reinterpret_cast<char*>(_fbo->toImage().bits());
-    auto size = _fbo->width() * _fbo->height();
-    // size_t nb = _videoOutput->write(buffer, buffer_size);
-
-    try
-    {
-        boost::array<char, 1> recv_buf;
-        udp::endpoint remote_endpoint;
-        boost::system::error_code error;
-        _socket.receive_from(boost::asio::buffer(recv_buf),
-            remote_endpoint, 0, error);
-
-        if (error && error != boost::asio::error::message_size)
-            throw boost::system::system_error(error);
-        
-        boost::system::error_code ignored_error;
-        
-        std::string message("glmixer udp junk");
-        _socket.send_to(boost::asio::buffer(_fbo->texture(), remote_endpoint, 0, ignored_error);
-    }  
-    catch (std::exception& e)
-    {
-        qDebug() << "RenderingManager" << e.what();
-    }
+    stream_.send();
     
 
     // restore state
