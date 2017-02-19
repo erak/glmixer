@@ -14,11 +14,16 @@ public:
     output_stream();
     ~output_stream();
 
-    void post();
+    void post(size_t size);
 
 private:
-    boost::asio::io_service     io_service_;
-    boost::thread_group         threads_;
+    void log(const std::string message) const;
+    void run();
+    
+    void stream(size_t size);    
 
-    std::shared_ptr< boost::asio::io_service::work > work_;
+    std::shared_ptr<boost::asio::io_service>        io_service_;
+    std::shared_ptr<boost::asio::io_service::work>  work_;
+
+    boost::thread_group         threads_;
 };

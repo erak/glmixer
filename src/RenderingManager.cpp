@@ -558,7 +558,7 @@ void RenderingManager::postRenderToFrameBuffer() {
 #endif // SPOUT
 
     // Post to stream
-    stream_.post();
+    stream_.post(23);
     
 
     // restore state
