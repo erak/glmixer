@@ -1,0 +1,378 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'glmixer.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.7)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "../../src/glmixer.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'glmixer.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.7. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_GLMixer[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      90,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       3,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+       9,    8,    8,    8, 0x05,
+      35,    8,    8,    8, 0x05,
+      53,   51,    8,    8, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      74,    8,    8,    8, 0x0a,
+     105,    8,    8,    8, 0x0a,
+     138,    8,    8,    8, 0x0a,
+     172,    8,    8,    8, 0x0a,
+     209,    8,    8,    8, 0x0a,
+     244,    8,    8,    8, 0x0a,
+     281,    8,    8,    8, 0x0a,
+     312,    8,    8,    8, 0x0a,
+     343,    8,    8,    8, 0x0a,
+     374,    8,    8,    8, 0x0a,
+     407,    8,    8,    8, 0x0a,
+     444,    8,    8,    8, 0x0a,
+     478,    8,    8,    8, 0x0a,
+     512,    8,    8,    8, 0x0a,
+     544,    8,    8,    8, 0x0a,
+     584,    8,    8,    8, 0x0a,
+     623,    8,    8,    8, 0x0a,
+     656,    8,    8,    8, 0x0a,
+     690,    8,    8,    8, 0x0a,
+     722,    8,    8,    8, 0x0a,
+     753,    8,    8,    8, 0x0a,
+     785,    8,    8,    8, 0x0a,
+     816,    8,    8,    8, 0x0a,
+     848,    8,    8,    8, 0x0a,
+     884,    8,    8,    8, 0x0a,
+     911,    8,    8,    8, 0x0a,
+     940,    8,    8,    8, 0x0a,
+     971,    8,    8,    8, 0x0a,
+    1004,    8,    8,    8, 0x0a,
+    1037,    8,    8,    8, 0x0a,
+    1072,    8,    8,    8, 0x0a,
+    1106,    8,    8,    8, 0x0a,
+    1143,    8,    8,    8, 0x0a,
+    1177,    8,    8,    8, 0x0a,
+    1213,    8,    8,    8, 0x0a,
+    1246,    8,    8,    8, 0x0a,
+    1283,    8,    8,    8, 0x0a,
+    1318,    8,    8,    8, 0x0a,
+    1352,    8,    8,    8, 0x0a,
+    1387,    8,    8,    8, 0x0a,
+    1422,    8,    8,    8, 0x0a,
+    1456,    8,    8,    8, 0x0a,
+    1479,    8,    8,    8, 0x0a,
+    1507,    8,    8,    8, 0x0a,
+    1535,    8,    8,    8, 0x0a,
+    1561,    8,    8,    8, 0x0a,
+    1593,    8,    8,    8, 0x0a,
+    1628,    8,    8,    8, 0x0a,
+    1668,    8,    8,    8, 0x0a,
+    1701,    8,    8,    8, 0x0a,
+    1742, 1740,    8,    8, 0x0a,
+    1760, 1740,    8,    8, 0x0a,
+    1778, 1740,    8,    8, 0x0a,
+    1798, 1740,    8,    8, 0x0a,
+    1823,    8,    8,    8, 0x0a,
+    1849,    8,    8,    8, 0x0a,
+    1863,    8,    8,    8, 0x0a,
+    1880,    8,    8,    8, 0x0a,
+    1896,    8,    8,    8, 0x0a,
+    1909,    8,    8,    8, 0x0a,
+    1936, 1927,    8,    8, 0x0a,
+    1965,    8,    8,    8, 0x0a,
+    2010,    8, 2002,    8, 0x0a,
+    2042,    8,    8,    8, 0x0a,
+    2072,    8, 2067,    8, 0x0a,
+    2091,    8,    8,    8, 0x0a,
+    2120,    8,    8,    8, 0x0a,
+    2144,    8,    8,    8, 0x0a,
+    2170,    8,    8,    8, 0x0a,
+    2193,   51,    8,    8, 0x0a,
+    2220, 2216,    8,    8, 0x0a,
+    2255,    8,    8,    8, 0x0a,
+    2272,   51,    8,    8, 0x0a,
+    2289,    8,    8,    8, 0x0a,
+    2322,    8,    8,    8, 0x0a,
+    2350,    8,    8,    8, 0x0a,
+    2378,    8,    8,    8, 0x0a,
+    2416, 2406,    8,    8, 0x0a,
+    2438,    8,    8,    8, 0x2a,
+    2453,    8,    8,    8, 0x0a,
+    2474, 2468,    8,    8, 0x0a,
+    2531, 2492, 2002,    8, 0x0a,
+    2604, 2576, 2002,    8, 0x2a,
+    2655, 2641, 2002,    8, 0x2a,
+    2722, 2696, 2684,    8, 0x0a,
+    2747,    8,    8,    8, 0x0a,
+    2764,    8,    8,    8, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_GLMixer[] = {
+    "GLMixer\0\0sourceMarksModified(bool)\0"
+    "sessionLoaded()\0,\0keyPressed(int,bool)\0"
+    "on_actionNewSource_triggered()\0"
+    "on_actionMediaSource_triggered()\0"
+    "on_actionCameraSource_triggered()\0"
+    "on_actionRenderingSource_triggered()\0"
+    "on_actionCaptureSource_triggered()\0"
+    "on_actionAlgorithmSource_triggered()\0"
+    "on_actionSvgSource_triggered()\0"
+    "on_actionWebSource_triggered()\0"
+    "on_actionShmSource_triggered()\0"
+    "on_actionCloneSource_triggered()\0"
+    "on_actionFreeframeSource_triggered()\0"
+    "on_actionStreamSource_triggered()\0"
+    "on_actionDeleteSource_triggered()\0"
+    "on_actionEditSource_triggered()\0"
+    "on_actionFormats_and_Codecs_triggered()\0"
+    "on_actionOpenGL_extensions_triggered()\0"
+    "on_markInSlider_sliderReleased()\0"
+    "on_markOutSlider_sliderReleased()\0"
+    "on_frameForwardButton_clicked()\0"
+    "on_fastForwardButton_pressed()\0"
+    "on_fastForwardButton_released()\0"
+    "on_frameSlider_sliderPressed()\0"
+    "on_frameSlider_sliderReleased()\0"
+    "on_frameSlider_actionTriggered(int)\0"
+    "on_actionAbout_triggered()\0"
+    "on_actionWebsite_triggered()\0"
+    "on_actionTutorials_triggered()\0"
+    "on_actionPreferences_triggered()\0"
+    "on_actionNew_Session_triggered()\0"
+    "on_actionClose_Session_triggered()\0"
+    "on_actionSave_Session_triggered()\0"
+    "on_actionSave_Session_as_triggered()\0"
+    "on_actionLoad_Session_triggered()\0"
+    "on_actionAppend_Session_triggered()\0"
+    "on_actionSelect_Next_triggered()\0"
+    "on_actionSelect_Previous_triggered()\0"
+    "on_actionResetToolbars_triggered()\0"
+    "on_controlOptionsButton_clicked()\0"
+    "on_actionSave_snapshot_triggered()\0"
+    "on_actionCopy_snapshot_triggered()\0"
+    "on_output_alpha_valueChanged(int)\0"
+    "on_copyNotes_clicked()\0"
+    "on_addDateToNotes_clicked()\0"
+    "on_addListToNotes_clicked()\0"
+    "on_timeLineEdit_clicked()\0"
+    "on_actionSourcePlay_triggered()\0"
+    "on_actionSourceRestart_triggered()\0"
+    "on_actionSourceSeekBackward_triggered()\0"
+    "on_actionSourcePause_triggered()\0"
+    "on_actionSourceSeekForward_triggered()\0"
+    "a\0setView(QAction*)\0setTool(QAction*)\0"
+    "setCursor(QAction*)\0setAspectRatio(QAction*)\0"
+    "updateRefreshTimerState()\0updateMarks()\0"
+    "enableSeek(bool)\0refreshTiming()\0"
+    "newSession()\0openSessionFile()\0filename\0"
+    "switchToSessionFile(QString)\0"
+    "actionLoad_RecentSession_triggered()\0"
+    "QString\0getRestorelastSessionFilename()\0"
+    "confirmSessionFileName()\0bool\0"
+    "useSystemDialogs()\0updateStatusControlActions()\0"
+    "showBusyRecording(bool)\0"
+    "startButton_toogled(bool)\0"
+    "replaceCurrentSource()\0undoChanged(bool,bool)\0"
+    "csi\0connectSource(SourceSet::iterator)\0"
+    "sessionChanged()\0Log(int,QString)\0"
+    "on_copyLogsToClipboard_clicked()\0"
+    "on_saveLogsToFile_clicked()\0"
+    "on_openLogsFolder_clicked()\0"
+    "on_logTexts_doubleClicked()\0pathtobin\0"
+    "readSettings(QString)\0readSettings()\0"
+    "saveSettings()\0event\0drop(QDropEvent*)\0"
+    "title,filters,saveExtention,suggestion\0"
+    "getFileName(QString,QString,QString,QString)\0"
+    "title,filters,saveExtention\0"
+    "getFileName(QString,QString,QString)\0"
+    "title,filters\0getFileName(QString,QString)\0"
+    "QStringList\0generatePowerOfTwoRequest\0"
+    "getMediaFileNames(bool&)\0screenshotView()\0"
+    "selectGLSLFragmentShader()\0"
+};
+
+void GLMixer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        GLMixer *_t = static_cast<GLMixer *>(_o);
+        switch (_id) {
+        case 0: _t->sourceMarksModified((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 1: _t->sessionLoaded(); break;
+        case 2: _t->keyPressed((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 3: _t->on_actionNewSource_triggered(); break;
+        case 4: _t->on_actionMediaSource_triggered(); break;
+        case 5: _t->on_actionCameraSource_triggered(); break;
+        case 6: _t->on_actionRenderingSource_triggered(); break;
+        case 7: _t->on_actionCaptureSource_triggered(); break;
+        case 8: _t->on_actionAlgorithmSource_triggered(); break;
+        case 9: _t->on_actionSvgSource_triggered(); break;
+        case 10: _t->on_actionWebSource_triggered(); break;
+        case 11: _t->on_actionShmSource_triggered(); break;
+        case 12: _t->on_actionCloneSource_triggered(); break;
+        case 13: _t->on_actionFreeframeSource_triggered(); break;
+        case 14: _t->on_actionStreamSource_triggered(); break;
+        case 15: _t->on_actionDeleteSource_triggered(); break;
+        case 16: _t->on_actionEditSource_triggered(); break;
+        case 17: _t->on_actionFormats_and_Codecs_triggered(); break;
+        case 18: _t->on_actionOpenGL_extensions_triggered(); break;
+        case 19: _t->on_markInSlider_sliderReleased(); break;
+        case 20: _t->on_markOutSlider_sliderReleased(); break;
+        case 21: _t->on_frameForwardButton_clicked(); break;
+        case 22: _t->on_fastForwardButton_pressed(); break;
+        case 23: _t->on_fastForwardButton_released(); break;
+        case 24: _t->on_frameSlider_sliderPressed(); break;
+        case 25: _t->on_frameSlider_sliderReleased(); break;
+        case 26: _t->on_frameSlider_actionTriggered((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 27: _t->on_actionAbout_triggered(); break;
+        case 28: _t->on_actionWebsite_triggered(); break;
+        case 29: _t->on_actionTutorials_triggered(); break;
+        case 30: _t->on_actionPreferences_triggered(); break;
+        case 31: _t->on_actionNew_Session_triggered(); break;
+        case 32: _t->on_actionClose_Session_triggered(); break;
+        case 33: _t->on_actionSave_Session_triggered(); break;
+        case 34: _t->on_actionSave_Session_as_triggered(); break;
+        case 35: _t->on_actionLoad_Session_triggered(); break;
+        case 36: _t->on_actionAppend_Session_triggered(); break;
+        case 37: _t->on_actionSelect_Next_triggered(); break;
+        case 38: _t->on_actionSelect_Previous_triggered(); break;
+        case 39: _t->on_actionResetToolbars_triggered(); break;
+        case 40: _t->on_controlOptionsButton_clicked(); break;
+        case 41: _t->on_actionSave_snapshot_triggered(); break;
+        case 42: _t->on_actionCopy_snapshot_triggered(); break;
+        case 43: _t->on_output_alpha_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 44: _t->on_copyNotes_clicked(); break;
+        case 45: _t->on_addDateToNotes_clicked(); break;
+        case 46: _t->on_addListToNotes_clicked(); break;
+        case 47: _t->on_timeLineEdit_clicked(); break;
+        case 48: _t->on_actionSourcePlay_triggered(); break;
+        case 49: _t->on_actionSourceRestart_triggered(); break;
+        case 50: _t->on_actionSourceSeekBackward_triggered(); break;
+        case 51: _t->on_actionSourcePause_triggered(); break;
+        case 52: _t->on_actionSourceSeekForward_triggered(); break;
+        case 53: _t->setView((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 54: _t->setTool((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 55: _t->setCursor((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 56: _t->setAspectRatio((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
+        case 57: _t->updateRefreshTimerState(); break;
+        case 58: _t->updateMarks(); break;
+        case 59: _t->enableSeek((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 60: _t->refreshTiming(); break;
+        case 61: _t->newSession(); break;
+        case 62: _t->openSessionFile(); break;
+        case 63: _t->switchToSessionFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 64: _t->actionLoad_RecentSession_triggered(); break;
+        case 65: { QString _r = _t->getRestorelastSessionFilename();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 66: _t->confirmSessionFileName(); break;
+        case 67: { bool _r = _t->useSystemDialogs();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 68: _t->updateStatusControlActions(); break;
+        case 69: _t->showBusyRecording((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 70: _t->startButton_toogled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 71: _t->replaceCurrentSource(); break;
+        case 72: _t->undoChanged((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 73: _t->connectSource((*reinterpret_cast< SourceSet::iterator(*)>(_a[1]))); break;
+        case 74: _t->sessionChanged(); break;
+        case 75: _t->Log((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 76: _t->on_copyLogsToClipboard_clicked(); break;
+        case 77: _t->on_saveLogsToFile_clicked(); break;
+        case 78: _t->on_openLogsFolder_clicked(); break;
+        case 79: _t->on_logTexts_doubleClicked(); break;
+        case 80: _t->readSettings((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 81: _t->readSettings(); break;
+        case 82: _t->saveSettings(); break;
+        case 83: _t->drop((*reinterpret_cast< QDropEvent*(*)>(_a[1]))); break;
+        case 84: { QString _r = _t->getFileName((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 85: { QString _r = _t->getFileName((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 86: { QString _r = _t->getFileName((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 87: { QStringList _r = _t->getMediaFileNames((*reinterpret_cast< bool(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = _r; }  break;
+        case 88: _t->screenshotView(); break;
+        case 89: _t->selectGLSLFragmentShader(); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData GLMixer::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject GLMixer::staticMetaObject = {
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_GLMixer,
+      qt_meta_data_GLMixer, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &GLMixer::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *GLMixer::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *GLMixer::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_GLMixer))
+        return static_cast<void*>(const_cast< GLMixer*>(this));
+    return QMainWindow::qt_metacast(_clname);
+}
+
+int GLMixer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 90)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 90;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void GLMixer::sourceMarksModified(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void GLMixer::sessionLoaded()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+
+// SIGNAL 2
+void GLMixer::keyPressed(int _t1, bool _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+QT_END_MOC_NAMESPACE

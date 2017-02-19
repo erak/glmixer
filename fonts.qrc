@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/glmixer">
+        <file>fonts/Hack-BoldOblique.ttf</file>
+        <file>fonts/Hack-RegularOblique.ttf</file>
+        <file>fonts/Hack-Bold.ttf</file>
+        <file>fonts/Hack-Regular.ttf</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/glsl">
+        <file>shaders/imageProcessing_vertex.glsl</file>
+        <file>shaders/imageProcessing_fragment.glsl</file>
+        <file>shaders/imageProcessing_fragment_simplified.glsl</file>
+    </qresource>
+    <qresource prefix="/shadertoy">
+        <file>shaders/effect/vignette.glsl</file>
+        <file>shaders/effect/Bokeh disc.glsl</file>
+        <file>shaders/effect/DawnBringer 4bit.glsl</file>
+        <file>shaders/effect/chromatic aberation.glsl</file>
+        <file>shaders/effect/fisheye.glsl</file>
+        <file>shaders/effect/bloompaint.glsl</file>
+        <file>shaders/effect/noise distortion.glsl</file>
+        <file>shaders/effect/anaglyphic.glsl</file>
+        <file>shaders/effect/bloom.glsl</file>
+        <file>shaders/effect/CRT.glsl</file>
+        <file>shaders/effect/cubify.glsl</file>
+        <file>shaders/effect/kaleidoscope.glsl</file>
+        <file>shaders/effect/quadmirror.glsl</file>
+        <file>shaders/effect/stripes.glsl</file>
+        <file>shaders/source/sea.glsl</file>
+        <file>shaders/source/disks.glsl</file>
+        <file>shaders/source/bubble.glsl</file>
+        <file>shaders/source/fractal.glsl</file>
+        <file>shaders/source/cloudy sky.glsl</file>
+        <file>shaders/source/cloud.glsl</file>
+        <file>shaders/source/color grid.glsl</file>
+        <file>shaders/source/star nest.glsl</file>
+        <file>shaders/source/voronoi distance.glsl</file>
+        <file>shaders/source/fireball.glsl</file>
+    </qresource>
+</RCC>

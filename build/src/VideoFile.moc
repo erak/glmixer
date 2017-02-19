@@ -1,0 +1,319 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'VideoFile.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.7)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "../../src/VideoFile.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'VideoFile.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.7. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_VideoFile[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      34,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       8,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      11,   10,   10,   10, 0x05,
+      41,   37,   10,   10, 0x05,
+      57,   55,   10,   10, 0x05,
+      70,   10,   10,   10, 0x05,
+      87,   10,   10,   10, 0x05,
+     112,   10,   10,   10, 0x05,
+     140,   10,   10,   10, 0x05,
+     158,   10,   10,   10, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     167,   10,   10,   10, 0x0a,
+     175,   10,   10,   10, 0x0a,
+     194,  182,   10,   10, 0x0a,
+     211,  205,   10,   10, 0x0a,
+     223,   10,   10,   10, 0x0a,
+     237,   10,   10,   10, 0x0a,
+     252,   10,   10,   10, 0x0a,
+     264,   10,   10,   10, 0x0a,
+     282,  277,   10,   10, 0x0a,
+     306,  296,   10,   10, 0x0a,
+     334,   10,  330,   10, 0x0a,
+     355,  296,   10,   10, 0x0a,
+     383,   10,  376,   10, 0x0a,
+     398,   10,   10,   10, 0x0a,
+     415,   10,   10,   10, 0x0a,
+     430,   10,   10,   10, 0x0a,
+     444,   10,   10,   10, 0x0a,
+     456,   10,   10,   10, 0x0a,
+     481,  478,   10,   10, 0x0a,
+     517,   10,  512,   10, 0x0a,
+     550,  544,   10,   10, 0x0a,
+     587,   10,  512,   10, 0x0a,
+     620,   10,  512,   10, 0x0a,
+     638,   10,  512,   10, 0x0a,
+     660,   10,  512,   10, 0x0a,
+     675,   10,   10,   10, 0x09,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_VideoFile[] = {
+    "VideoFile\0\0frameReady(VideoPicture*)\0"
+    "run\0running(bool)\0p\0paused(bool)\0"
+    "markingChanged()\0playSpeedChanged(double)\0"
+    "playSpeedFactorChanged(int)\0"
+    "seekEnabled(bool)\0failed()\0start()\0"
+    "stop()\0startorstop\0play(bool)\0pause\0"
+    "pause(bool)\0resetMarkIn()\0resetMarkOut()\0"
+    "setMarkIn()\0setMarkOut()\0loop\0"
+    "setLoop(bool)\0playspeed\0setPlaySpeedFactor(int)\0"
+    "int\0getPlaySpeedFactor()\0setPlaySpeed(double)\0"
+    "double\0getPlaySpeed()\0resetPlaySpeed()\0"
+    "seekBackward()\0seekForward()\0seekBegin()\0"
+    "seekForwardOneFrame()\0on\0"
+    "setOptionRestartToMarkIn(bool)\0bool\0"
+    "getOptionRestartToMarkIn()\0black\0"
+    "setOptionRevertToBlackWhenStop(bool)\0"
+    "getOptionRevertToBlackWhenStop()\0"
+    "hasAlphaChannel()\0ignoresAlphaChannel()\0"
+    "isInterlaced()\0video_refresh_timer()\0"
+};
+
+void VideoFile::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        VideoFile *_t = static_cast<VideoFile *>(_o);
+        switch (_id) {
+        case 0: _t->frameReady((*reinterpret_cast< VideoPicture*(*)>(_a[1]))); break;
+        case 1: _t->running((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->paused((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 3: _t->markingChanged(); break;
+        case 4: _t->playSpeedChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 5: _t->playSpeedFactorChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->seekEnabled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: _t->failed(); break;
+        case 8: _t->start(); break;
+        case 9: _t->stop(); break;
+        case 10: _t->play((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 11: _t->pause((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 12: _t->resetMarkIn(); break;
+        case 13: _t->resetMarkOut(); break;
+        case 14: _t->setMarkIn(); break;
+        case 15: _t->setMarkOut(); break;
+        case 16: _t->setLoop((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 17: _t->setPlaySpeedFactor((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: { int _r = _t->getPlaySpeedFactor();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 19: _t->setPlaySpeed((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 20: { double _r = _t->getPlaySpeed();
+            if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
+        case 21: _t->resetPlaySpeed(); break;
+        case 22: _t->seekBackward(); break;
+        case 23: _t->seekForward(); break;
+        case 24: _t->seekBegin(); break;
+        case 25: _t->seekForwardOneFrame(); break;
+        case 26: _t->setOptionRestartToMarkIn((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: { bool _r = _t->getOptionRestartToMarkIn();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 28: _t->setOptionRevertToBlackWhenStop((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 29: { bool _r = _t->getOptionRevertToBlackWhenStop();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 30: { bool _r = _t->hasAlphaChannel();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 31: { bool _r = _t->ignoresAlphaChannel();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 32: { bool _r = _t->isInterlaced();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 33: _t->video_refresh_timer(); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData VideoFile::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject VideoFile::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_VideoFile,
+      qt_meta_data_VideoFile, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &VideoFile::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *VideoFile::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *VideoFile::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_VideoFile))
+        return static_cast<void*>(const_cast< VideoFile*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int VideoFile::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 34)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 34;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void VideoFile::frameReady(VideoPicture * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void VideoFile::running(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void VideoFile::paused(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void VideoFile::markingChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, 0);
+}
+
+// SIGNAL 4
+void VideoFile::playSpeedChanged(double _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void VideoFile::playSpeedFactorChanged(int _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void VideoFile::seekEnabled(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
+}
+
+// SIGNAL 7
+void VideoFile::failed()
+{
+    QMetaObject::activate(this, &staticMetaObject, 7, 0);
+}
+static const uint qt_meta_data_videoFileThread[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       1,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      17,   16,   16,   16, 0x05,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_videoFileThread[] = {
+    "videoFileThread\0\0failed()\0"
+};
+
+void videoFileThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        videoFileThread *_t = static_cast<videoFileThread *>(_o);
+        switch (_id) {
+        case 0: _t->failed(); break;
+        default: ;
+        }
+    }
+    Q_UNUSED(_a);
+}
+
+const QMetaObjectExtraData videoFileThread::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject videoFileThread::staticMetaObject = {
+    { &QThread::staticMetaObject, qt_meta_stringdata_videoFileThread,
+      qt_meta_data_videoFileThread, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &videoFileThread::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *videoFileThread::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *videoFileThread::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_videoFileThread))
+        return static_cast<void*>(const_cast< videoFileThread*>(this));
+    return QThread::qt_metacast(_clname);
+}
+
+int videoFileThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QThread::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void videoFileThread::failed()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+QT_END_MOC_NAMESPACE

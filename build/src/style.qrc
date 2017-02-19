@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/style">
+        <file alias="default">/home/bitshift/Dev/cpp/glmixer/src/../linux/style.qss</file>
+    </qresource>
+</RCC>

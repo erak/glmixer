@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GLSLCodeEditorWidget</class>
+ <widget class="QWidget" name="GLSLCodeEditorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>587</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GLMixer - Shadertoy Code Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/glmixer/icons/glmixer.png</normaloff>:/glmixer/icons/glmixer.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="childrenCollapsible">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTabWidget" name="PluginInformation">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>175</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="plugininfo">
+          <attribute name="title">
+           <string>Informations</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="leftMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>12</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="../icons.qrc">:/glmixer/icons/shadertoy_black.png</pixmap>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.shadertoy.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://www.shadertoy.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::ExpandingFieldsGrow</enum>
+             </property>
+             <property name="formAlignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="horizontalSpacing">
+              <number>4</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>6</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Name</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="nameEdit">
+               <property name="statusTip">
+                <string>Name of this shadertoy plugin</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>About</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="aboutEdit">
+               <property name="statusTip">
+                <string>A word about the author.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Description</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="descriptionEdit">
+               <property name="statusTip">
+                <string>A few words describing the plugin.</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="shaderinput">
+          <attribute name="title">
+           <string>Shader input</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>3</number>
+           </property>
+           <property name="topMargin">
+            <number>3</number>
+           </property>
+           <property name="rightMargin">
+            <number>3</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="GLSLCodeEditor" name="headerText" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QTextEdit {
+     border-width: 0px;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="helpsyntax">
+          <attribute name="title">
+           <string>Help syntax</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="spacing">
+            <number>3</number>
+           </property>
+           <property name="leftMargin">
+            <number>3</number>
+           </property>
+           <property name="topMargin">
+            <number>3</number>
+           </property>
+           <property name="rightMargin">
+            <number>3</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="QTextBrowser" name="textBrowser">
+             <property name="styleSheet">
+              <string notr="true">QTextEdit{
+     border-width: 0px;
+     color:palette(button-text);
+     background-color: transparent;
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="documentTitle">
+              <string>Help shadertoy</string>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Help shadertoy&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:200; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;This help only covers the parts of GLSL ES that are relevant for Shadertoy. For the complete specification please have a look at &lt;/span&gt;&lt;a href=&quot;http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; text-decoration: underline; color:#0000ff;&quot;&gt;GLSL ES specification&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#e0e0e0;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; background-color:#e0e0e0;&quot;&gt;Language:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Preprocessor: # #define #undef #if #ifdef #ifndef #else #elif #endif #error #pragma #extension #version #line&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Operators: () + - ! * / % &amp;lt;&amp;lt; &amp;gt;&amp;gt; &amp;lt; &amp;gt; &amp;lt;= &amp;gt;= == != &amp;amp;&amp;amp; ||&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Comments: // /* */&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Types: void bool int float vec2 vec3 vec4 bvec2 bvec3 bvec4 ivec2 ivec3 ivec4 mat2 mat3 mat4 sampler2D&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Function Parameter Qualifiers: [none], in, out, inout&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Global Variable Qualifiers: const&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Vector Components: .xyzw .rgba .stpq&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Flow Control: if else for return break continue&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Output: vec4 gl_FragColor&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Input: vec4 gl_FragCoord&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#e0e0e0;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; background-color:#e0e0e0;&quot;&gt;Built-in Functions:&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type radians (type degrees)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type degrees (type radians)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type sin (type angle)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type cos (type angle)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type tan (type angle)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type asin (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type acos (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type atan (type y, type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type atan (type y_over_x)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type pow (type x, type y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type exp (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type log (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type exp2 (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type log2 (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type sqrt (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type inversesqrt (type x)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type abs (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type sign (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type floor (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type ceil (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type fract (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type mod (type x, float y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type mod (type x, type y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type min (type x, type y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type min (type x, float y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type max (type x, type y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type max (type x, float y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type clamp (type x, type minV, type maxV)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type clamp (type x, float minV, float maxV)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type mix (type x, type y, type a)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type mix (type x, type y, float a)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type step (type edge, type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type step (float edge, type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type smoothstep (type a, type b, type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type smoothstep (float a, float b, type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;mat matrixCompMult (mat x, mat y)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;float length (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;float distance (type p0, type p1)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;float dot (type x, type y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec3 cross (vec3 x, vec3 y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type normalize (type x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type faceforward (type N, type I, type Nref)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type reflect (type I, type N)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;type refract (type I, type N,float eta)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec lessThan(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec lessThan(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec lessThanEqual(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec lessThanEqual(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec greaterThan(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec greaterThan(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec greaterThanEqual(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec greaterThanEqual(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec equal(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec equal(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec equal(bvec x, bvec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec notEqual(vec x, vec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec notEqual(ivec x, ivec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec notEqual(bvec x, bvec y)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bool any(bvec x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bool all(bvec x)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;bvec not(bvec x)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2D(sampler2D sampler, vec2 coord )&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2D(sampler2D sampler, vec2 coord, float bias)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 textureCube(samplerCube sampler, vec3 coord)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2DProj(sampler2D sampler, vec3 coord )&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2DProj(sampler2D sampler, vec3 coord, float bias)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2DProj(sampler2D sampler, vec4 coord)&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vec4 texture2DProj(sampler2D sampler, vec4 coord, float bias)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#e0e0e0;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; background-color:#e0e0e0;&quot;&gt;How-to&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use structs: struct myDataType { float occlusion; vec3 color; }; myDataType myData = myDataType(0.7, vec3(1.0, 2.0, 3.0));&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Initialize arrays: arrays cannot be initialized in WebGL.&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Do conversions: int b = 3; float b = float(a);&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Do component swizzling: vec4 a = vec4(1.0,2.0,3.0,4.0); vec4 b = a.zyyw;&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Access matrix components: mat4 m; m[1] = vec4(2.0); m[0][0] = 1.0; m[2][3] = 2.0;&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#e0e0e0;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; background-color:#e0e0e0;&quot;&gt;What is NOT legal&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the f suffix for floating pont numbers: 1.0f is illegal in GLSL. You must use 1.0&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;saturate(): saturate(x) doesn't exist in GLSL. Use clamp(x,0.0,1.0) instead&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#e0e0e0;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; background-color:#e0e0e0;&quot;&gt;What is NOT compatible from Shadertoy&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the shader input for multiple textures (iChannel0..3): only iChannel0 is valid.&lt;/li&gt;
+&lt;li style=&quot; font-size:10pt; font-weight:400;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the shader input for mouse coordinates (iMouse): one simple fix is to add :&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;vec3 iMouse = iResolution / 2.0;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:1; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>5</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="GLSLCodeEditor" name="codeTextEdit" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QToolButton" name="loadButton">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Replace code by content of a text file.</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/textopen.png</normaloff>:/glmixer/icons/textopen.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="pasteButton">
+           <property name="toolTip">
+            <string>Replace code by content of the clipboard (paste)</string>
+           </property>
+           <property name="text">
+            <string>Paste over</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/textpaste.png</normaloff>:/glmixer/icons/textpaste.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="restoreButton">
+           <property name="toolTip">
+            <string>Replace code  with the default  code of the plugin.</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/clean.png</normaloff>:/glmixer/icons/clean.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="examplesCombobox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="saveButton">
+           <property name="toolTip">
+            <string>Save code to file</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/textsave.png</normaloff>:/glmixer/icons/textsave.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="applyButton">
+           <property name="toolTip">
+            <string>Apply the current code (compile GLSL).</string>
+           </property>
+           <property name="text">
+            <string>Apply</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/media-playback-start.png</normaloff>:/glmixer/icons/media-playback-start.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="validateButton">
+           <property name="toolTip">
+            <string>Apply the current code and close this window.</string>
+           </property>
+           <property name="statusTip">
+            <string>Apply current code and close this window.</string>
+           </property>
+           <property name="text">
+            <string>Apply &amp;&amp; Close</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/media-playback-start.png</normaloff>:/glmixer/icons/media-playback-start.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="titleCompilationLogs">
+           <property name="styleSheet">
+            <string notr="true">background: palette(dark);</string>
+           </property>
+           <property name="text">
+            <string>GLSL Compilation logs</string>
+           </property>
+           <property name="margin">
+            <number>3</number>
+           </property>
+           <property name="indent">
+            <number>15</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="helpButton">
+           <property name="toolTip">
+            <string>Open Online Documentation</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+     max-height: 16px;
+     max-width: 16px;
+        font: bold;
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string>?</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/question.png</normaloff>:/glmixer/icons/question.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPlainTextEdit" name="logText">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="documentTitle">
+       <string/>
+      </property>
+      <property name="undoRedoEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GLSLCodeEditor</class>
+   <extends>QWidget</extends>
+   <header location="global">GLSLCodeEditor.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>applyButton</sender>
+   <signal>pressed()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>apply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>563</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validateButton</sender>
+   <signal>pressed()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>703</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validateButton</sender>
+   <signal>pressed()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>apply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>703</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>340</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>saveCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>463</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>778</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pasteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>pasteCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-23</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>restoreButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>restoreCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-10</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>loadCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>29</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-2</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>helpButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GLSLCodeEditorWidget</receiver>
+   <slot>showHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>686</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>apply()</slot>
+  <slot>saveCode()</slot>
+  <slot>loadCode()</slot>
+  <slot>pasteCode()</slot>
+  <slot>restoreCode()</slot>
+  <slot>showHelp()</slot>
+ </slots>
+</ui>

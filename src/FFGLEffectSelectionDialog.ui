@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FFGLEffectSelectionDialog</class>
+ <widget class="QDialog" name="FFGLEffectSelectionDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>442</width>
+    <height>476</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/glmixer/icons/ffgl-source.png</normaloff>:/glmixer/icons/ffgl-source.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="SourceDisplayWidget" name="preview" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../icons.qrc">:/glmixer/icons/freeframe.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="helpFreeFrameButton">
+       <property name="toolTip">
+        <string>Open Online Documentation</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+     max-height: 16px;
+     max-width: 16px;
+        font: bold;
+}
+
+</string>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../icons.qrc">
+         <normaloff>:/glmixer/icons/question.png</normaloff>:/glmixer/icons/question.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="freeframeEmbededPlugin">
+     <property name="text">
+      <string>I&amp;nstalled plugins</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="freeframeEmbededList">
+     <item>
+      <property name="text">
+       <string>Select...</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="freeframeFilePlugin">
+     <property name="text">
+      <string>Other Freefra&amp;me plugin</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widgetSelectPluginFile" native="true">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QComboBox" name="freeframeFileList">
+        <property name="toolTip">
+         <string>Select a FreeFrame plugin</string>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="maxCount">
+         <number>10</number>
+        </property>
+        <property name="insertPolicy">
+         <enum>QComboBox::InsertAtTop</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+        </property>
+        <property name="duplicatesEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="freeframeOpenfile">
+        <property name="toolTip">
+         <string>Browse to open a shared library file (.dll, .so or .bundle).</string>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/glmixer/icons/folderadd.png</normaloff>:/glmixer/icons/folderadd.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="freeframeDeleteFile">
+        <property name="text">
+         <string>...</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/glmixer/icons/fileclose.png</normaloff>:/glmixer/icons/fileclose.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="warningLabel">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Warning:&lt;/span&gt; A plugin with the same filename but from another location is already in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SourceDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>SourceDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededPlugin</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededList</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>391</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>helpFreeFrameButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>showFreeframeHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>337</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>394</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFilePlugin</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeDeleteFile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>deleteFreeframePlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeOpenfile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>browseFreeframePlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>283</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFileList</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FFGLEffectSelectionDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>397</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededPlugin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>freeframeEmbededList</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFilePlugin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>widgetSelectPluginFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>40</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateSourcePreview()</slot>
+  <slot>showFreeframeHelp()</slot>
+  <slot>browseFreeframePlugin()</slot>
+  <slot>deleteFreeframePlugin()</slot>
+ </slots>
+</ui>

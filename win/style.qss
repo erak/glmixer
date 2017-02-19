@@ -1,0 +1,39 @@
+QMainWindow::separator {
+     background: palette(window);
+     width: 6px;
+     height: 6px; 
+ }
+
+ QMainWindow::separator:hover {
+     background: lightgray;
+ }
+
+QDockWidget::close-button, QDockWidget::float-button {
+     padding: 0px;
+     icon-size: 14px;
+ }
+
+QToolButton { 
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 24px;
+     min-width: 24px;
+     border-color: transparent;
+     background: transparent;
+}
+
+QToolButton:checked { 
+     border-color: palette(dark);
+     background-color: qradialgradient(cx: 0.7, cy: 1.4, fx: 0.7, fy: 1.9, radius: 1.5, stop: 0 palette(dark), stop: 1 transparent );
+}
+
+QToolButton:pressed { 
+	background: palette(midlight);
+}
+
+QToolButton:hover { 
+     border-color: palette(highlight);
+}
+

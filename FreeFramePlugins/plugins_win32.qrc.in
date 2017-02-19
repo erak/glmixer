@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/ffgl">
+        <file alias="ShadertoyEffect">${CMAKE_CURRENT_BINARY_DIR}/FreeFrameFragmentCodePlugin/libShadertoyEffect.dll</file>
+        <file alias="ShadertoySource">${CMAKE_CURRENT_BINARY_DIR}/FreeFrameFragmentCodePlugin/libShadertoySource.dll</file>
+        <file alias="ScreenCapture">${CMAKE_CURRENT_BINARY_DIR}/FreeFrameQtScreenCapturePlugin/libffglQtScreenCapture.dll</file>
+        <file alias="Camera">${CMAKE_CURRENT_BINARY_DIR}/ExtremelySimpleCaptureFFGLPlugin/libescapiffgl.dll</file>
+    </qresource>
+</RCC>

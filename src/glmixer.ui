@@ -1,0 +1,5466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GLMixer</class>
+ <widget class="QMainWindow" name="GLMixer">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Graphic Live Mixer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/glmixer/icons/glmixer.png</normaloff>:/glmixer/icons/glmixer.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="centralViewLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="viewControlBar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string>background-color:  rgba(52,52,52, 255);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="viewIcon">
+         <property name="toolTip">
+          <string>Geometry View</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../icons.qrc">:/glmixer/icons/manipulation.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="viewLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(128, 128, 128);</string>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="text">
+          <string>View</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::NoTextInteraction</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizSpace">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="zoomLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(128, 128, 128);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="sliderZoom">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QSlider::groove:horizontal {
+border: 1px solid rgba(52,52,52, 255);
+height: 8px;
+background:  rgba(52,52,52, 255);
+border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+ width: 10px;
+ border-radius: 4px;
+ background-color: rgba(52,52,52, 255);
+}
+
+QSlider::handle:horizontal:hover {
+ background-color: palette(highlight);
+}
+
+QSlider::add-page:qlineargradient {
+background: palette(midlight);
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+QSlider::sub-page:qlineargradient {
+background: palette(window);
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+</string>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>10</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonZoomReset">
+         <property name="toolTip">
+          <string>Zoom reset</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 12px;
+     min-width:12px;
+     border-color: transparent;
+     background: transparent;
+}
+QToolButton:pressed {
+	background: palette(dark);
+}
+QToolButton:hover {
+     border-color: palette(mid);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/zoom-original.png</normaloff>:/glmixer/icons/zoom-original.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonZoomPlus">
+         <property name="toolTip">
+          <string>Zoom in</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 12px;
+     min-width:12px;
+     border-color: transparent;
+     background: transparent;
+}
+QToolButton:pressed {
+	background: palette(dark);
+}
+QToolButton:hover {
+     border-color: palette(mid);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/zoom-in.png</normaloff>:/glmixer/icons/zoom-in.png</iconset>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonZoomMinus">
+         <property name="toolTip">
+          <string>Zoom out</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 12px;
+     min-width:12px;
+     border-color: transparent;
+     background: transparent;
+}
+QToolButton:pressed {
+	background: palette(dark);
+}
+QToolButton:hover {
+     border-color: palette(mid);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/zoom-out.png</normaloff>:/glmixer/icons/zoom-out.png</iconset>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonZoomFit">
+         <property name="toolTip">
+          <string>Zoom best fit</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 12px;
+     min-width:12px;
+     border-color: transparent;
+     background: transparent;
+}
+QToolButton:pressed {
+	background: palette(dark);
+}
+QToolButton:hover {
+     border-color: palette(mid);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/zoom-fit-best.png</normaloff>:/glmixer/icons/zoom-fit-best.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonZoomCurrent">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Zoom on current source</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     min-height: 12px;
+     min-width:12px;
+     border-color: transparent;
+     background: transparent;
+}
+QToolButton:pressed {
+	background: palette(dark);
+}
+QToolButton:hover {
+     border-color: palette(mid);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/zoom-fit-source.png</normaloff>:/glmixer/icons/zoom-fit-source.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="fpsLabel">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(128, 128, 128);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGLWidget" name="mainRendering" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="previewDockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>212</width>
+     <height>213</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/display.png</normaloff>:/glmixer/icons/display.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Preview of the rendering output (as it is displayed in the output window).</string>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Preview</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="previewDockWidgetMainContents">
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>3</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>3</number>
+     </property>
+     <property name="bottomMargin">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="previewDockWidgetContents" native="true">
+       <layout class="QHBoxLayout" name="previewDockWidgetContentsLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="previewDockWidgetButtonsLayout">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="output_onair">
+         <property name="toolTip">
+          <string>On air</string>
+         </property>
+         <property name="statusTip">
+          <string>Output window is active when &quot;On air&quot;</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/off.png</normaloff>
+           <normalon>:/glmixer/icons/on.png</normalon>:/glmixer/icons/off.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonIconOnly</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="output_alpha">
+         <property name="toolTip">
+          <string>Adjust fading of output</string>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="singleStep">
+          <number>5</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+         <property name="invertedControls">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="output_aspectratio">
+         <property name="toolTip">
+          <string>Select aspect ratio</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/aspectratio.png</normaloff>:/glmixer/icons/aspectratio.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::InstantPopup</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="output_fullscreen">
+         <property name="toolTip">
+          <string>Full screen</string>
+         </property>
+         <property name="statusTip">
+          <string>Sets the output window to fullscreen mode.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/fullscreen.png</normaloff>:/glmixer/icons/fullscreen.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="vcontrolDockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>84</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/video.png</normaloff>:/glmixer/icons/video.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Controls for video playback of media sources.</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFeatureMask</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>&amp;Control</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="vcontrolDockWidgetContents">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <property name="topMargin">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="SourceDisplayWidget" name="sourcePreview" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSplitter" name="vcontrolOptionSplitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QWidget" name="vcontrolDockWidgetControls" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>72</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QToolButton" name="startButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Start / stops </string>
+           </property>
+           <property name="statusTip">
+            <string>Starts / stops updating the video</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton {
+     min-height: 32px;
+     min-width: 48px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Play</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/media-playback-start.png</normaloff>:/glmixer/icons/media-playback-start.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="videoFrame">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="videoControlFrame">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <layout class="QHBoxLayout">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QToolButton" name="seekBeginButton">
+                 <property name="toolTip">
+                  <string>Restart</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-frame-backward.png</normaloff>:/glmixer/icons/media-frame-backward.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="seekBackwardButton">
+                 <property name="toolTip">
+                  <string>Jump backward</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-skip-backward.png</normaloff>:/glmixer/icons/media-skip-backward.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="pauseButton">
+                 <property name="toolTip">
+                  <string>Pause/resume play</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Pause/resume play</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-playback-pause.png</normaloff>:/glmixer/icons/media-playback-pause.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="fastForwardButton">
+                 <property name="toolTip">
+                  <string>Fast forward</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-seek-forward.png</normaloff>:/glmixer/icons/media-seek-forward.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="frameForwardButton">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="toolTip">
+                  <string>Step by 1 frame</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-frame-forward.png</normaloff>:/glmixer/icons/media-frame-forward.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="seekForwardButton">
+                 <property name="toolTip">
+                  <string>Jump forward</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-skip-forward.png</normaloff>:/glmixer/icons/media-skip-forward.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="videoLoopButton">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Loop playback (jump back to begin when arrived at end)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/media-repeat.png</normaloff>:/glmixer/icons/media-repeat.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="speedControlFrame">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <layout class="QHBoxLayout">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLCDNumber" name="playSpeedDisplay">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="smallDecimalPoint">
+                  <bool>false</bool>
+                 </property>
+                 <property name="digitCount">
+                  <number>4</number>
+                 </property>
+                 <property name="mode">
+                  <enum>QLCDNumber::Dec</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                 <property name="value" stdset="0">
+                  <double>1.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSlider" name="playSpeedSlider">
+                 <property name="toolTip">
+                  <string>Play speed </string>
+                 </property>
+                 <property name="minimum">
+                  <number>0</number>
+                 </property>
+                 <property name="maximum">
+                  <number>200</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>1</number>
+                 </property>
+                 <property name="pageStep">
+                  <number>10</number>
+                 </property>
+                 <property name="value">
+                  <number>100</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>false</bool>
+                 </property>
+                 <property name="invertedControls">
+                  <bool>false</bool>
+                 </property>
+                 <property name="tickPosition">
+                  <enum>QSlider::TicksBelow</enum>
+                 </property>
+                 <property name="tickInterval">
+                  <number>50</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="playSpeedReset">
+                 <property name="toolTip">
+                  <string>Reset speed to 1</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QToolButton {
+     border-style: solid;
+     border-width: 1px;
+     border-radius:5px;
+	 padding: 3px;
+     border-color: transparent;
+     background: transparent;
+	max-height: 16px;
+	max-width: 16px;
+     min-height: 16px;
+     min-width: 16px;
+}
+
+QToolButton:pressed {
+	background: palette(midlight);
+}
+
+QToolButton:hover {
+     border-color: palette(highlight);
+}
+
+</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../icons.qrc">
+                   <normaloff>:/glmixer/icons/clean.png</normaloff>:/glmixer/icons/clean.png</iconset>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="timingControlFrame">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>72</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>3</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <property name="horizontalSpacing">
+               <number>3</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>2</number>
+              </property>
+              <item row="0" column="0" colspan="2">
+               <widget class="QToolButton" name="timeLineEdit">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <property name="baseSize">
+                 <size>
+                  <width>60</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string/>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QToolButton {
+     border-radius:2px;
+	 padding: 2px;
+    max-height: 20px;
+    min-height: 20px;
+    font-size: 9pt;
+    font-weight: bold;
+}</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QToolButton" name="resetMarkInButton">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="baseSize">
+                 <size>
+                  <width>20</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Resets the begin to the start of file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QToolButton {
+    border-radius: 2px;
+	 padding: 2px;
+    max-height: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    min-width: 16px;
+}</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../icons.qrc">
+                  <normaloff>:/glmixer/icons/media-begin.png</normaloff>:/glmixer/icons/media-begin.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QPushButton" name="markOutButton">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the end to the current time&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+     border-radius:2px;
+	 padding: 2px;
+	 max-height: 16px;
+     min-height: 16px;
+	 font-size: 8pt;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Set end</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../icons.qrc">
+                  <normaloff>:/glmixer/icons/media-out.png</normaloff>:/glmixer/icons/media-out.png</iconset>
+                </property>
+                <property name="shortcut">
+                 <string>O</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QToolButton" name="resetMarkOutButton">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="baseSize">
+                 <size>
+                  <width>20</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset the end to the end of file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QToolButton {
+    border-radius: 2px;
+	 padding: 2px;
+    max-height: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    min-width: 16px;
+}</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../icons.qrc">
+                  <normaloff>:/glmixer/icons/media-end.png</normaloff>:/glmixer/icons/media-end.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPushButton" name="markInButton">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="baseSize">
+                 <size>
+                  <width>60</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Sets the begin to the current time</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+     border-radius:2px;
+	 padding: 2px;
+	 max-height: 16px;
+     min-height: 16px;
+	 font-size: 8pt;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Set begin</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../icons.qrc">
+                  <normaloff>:/glmixer/icons/media-in.png</normaloff>:/glmixer/icons/media-in.png</iconset>
+                </property>
+                <property name="shortcut">
+                 <string>I</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <property name="spacing">
+               <number>2</number>
+              </property>
+              <property name="leftMargin">
+               <number>2</number>
+              </property>
+              <property name="rightMargin">
+               <number>2</number>
+              </property>
+              <item>
+               <widget class="QSlider" name="frameSlider">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Current position</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider::groove:horizontal {
+border: 1px solid  palette(dark);
+background: transparent;
+height: 0px;
+}
+
+QSlider::handle:horizontal {
+image: url(:/glmixer/icons/media-playback-start.png);
+background: palette(midlight);
+border: 1px solid palette(shadow);
+border-radius: 10px;
+width: 18px;
+margin-top: -10px;
+margin-bottom: -10px;
+}
+
+QSlider::handle:horizontal:hover {
+background: qradialgradient(cx: 0.5, cy: 0.5, fx: 0.5, fy: 0.5, radius: 0.6, stop: 0 palette(highlight), stop: 1 palette(midlight) );
+}
+
+QSlider::handle:horizontal:disabled {
+background:  palette(window);
+border: 1px solid palette(dark);
+}
+
+QSlider::groove:horizontal:disabled {
+border-color: palette(dark);
+}
+</string>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="pageStep">
+                 <number>100</number>
+                </property>
+                <property name="tracking">
+                 <bool>false</bool>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="markInSlider">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Position of the begin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider::groove:horizontal {
+border: 1px solid lightgray;
+background: transparent;
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::sub-page:horizontal {
+background: transparent;
+border: 1px solid palette(dark);
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::add-page:horizontal {
+background: palette(midlight);
+border: 1px solid palette(dark);
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+image: url(:/glmixer/icons/media-in.png);
+background: transparent;
+border: 0px solid;
+width: 16px;
+margin-top: -7px;
+margin-bottom: -7px;
+}
+
+QSlider::handle:horizontal:hover {
+background: qradialgradient(cx: 0.5, cy: 0.5, fx: 0.5, fy: 0.5, radius: 0.6, stop: 0 palette(highlight), stop: 1 transparent );
+}
+
+QSlider::sub-page:horizontal:disabled {
+background: palette(window);
+border-color: palette(dark);
+}
+
+QSlider::add-page:horizontal:disabled {
+background: palette(window);
+border-color: palette(dark);
+}
+</string>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+                <property name="tracking">
+                 <bool>true</bool>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::NoTicks</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="markOutSlider">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Position of the end&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider::groove:horizontal {
+border: 1px solid lightgray;
+background: transparent;
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::add-page:horizontal {
+background: transparent;
+border: 1px solid palette(dark);
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::sub-page:horizontal {
+background: palette(midlight);
+border: 1px solid palette(dark);
+height: 4px;
+border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+image: url(:/glmixer/icons/media-out.png);
+background: transparent;
+border: 0px solid;
+width: 16px;
+margin-top: -7px;
+margin-bottom: -7px;
+}
+
+QSlider::handle:horizontal:hover {
+background: qradialgradient(cx: 0.5, cy: 0.5, fx: 0.5, fy: 0.5, radius: 0.6, stop: 0 palette(highlight), stop: 1 transparent );
+}
+
+QSlider::sub-page:horizontal:disabled {
+background: palette(window);
+border-color: palette(dark);
+}
+
+QSlider::add-page:horizontal:disabled {
+background: palette(window);
+border-color: palette(dark);
+}
+s</string>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>1000</number>
+                </property>
+                <property name="tracking">
+                 <bool>true</bool>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="tickPosition">
+                 <enum>QSlider::NoTicks</enum>
+                </property>
+                <property name="tickInterval">
+                 <number>200</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="controlOptionsButton">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton {
+     border: 0px;
+     background: transparent;
+	max-height: 64px;
+	max-width: 16px;
+     min-height: 64px;
+     min-width: 16px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/options.png</normaloff>:/glmixer/icons/options.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>64</height>
+            </size>
+           </property>
+           <property name="shortcut">
+            <string notr="true"/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="vcontrolDockWidgetOptions" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="restartWhereStoppedCheckBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check to go to begin position when pressing stop.&lt;/p&gt;&lt;p&gt;Uncheck to stay on the same frame when pressing stop.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Replay at begin</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget_2" native="true">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>8</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="resetToBlackCheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>Check to clear to black when stopped,
+Uncheck to display the restart frame when stopped.</string>
+              </property>
+              <property name="text">
+               <string>Stop to black</string>
+              </property>
+              <property name="tristate">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="sourceDockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/preferences.png</normaloff>:/glmixer/icons/preferences.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Configuration of current source</string>
+   </property>
+   <property name="statusTip">
+    <string>Configuration of the source currently highlighted (clic on a source icon to highlight it).</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolButton {
+     border-radius:2px;
+     min-height: 12px;
+     min-width: 12px;
+}</string>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>C&amp;urrent Source</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="sourceDockWidgetContents">
+    <layout class="QVBoxLayout" name="sourceDockWidgetContentsLayout">
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>3</number>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1558</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew_Session"/>
+    <addaction name="actionLoad_Session"/>
+    <addaction name="actionRecent_session"/>
+    <addaction name="actionAppend_Session"/>
+    <addaction name="actionSave_Session"/>
+    <addaction name="actionSave_Session_as"/>
+    <addaction name="actionClose_Session"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="viewMenu">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="zoomMenu">
+     <property name="title">
+      <string>&amp;Zoom</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/zoom.png</normaloff>:/glmixer/icons/zoom.png</iconset>
+     </property>
+     <addaction name="actionZoomReset"/>
+     <addaction name="actionZoomIn"/>
+     <addaction name="actionZoomOut"/>
+     <addaction name="actionZoomBestFit"/>
+    </widget>
+    <widget class="QMenu" name="catalogMenu">
+     <property name="title">
+      <string>&amp;Catalog</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/image-collection.png</normaloff>:/glmixer/icons/image-collection.png</iconset>
+     </property>
+     <addaction name="actionShow_Catalog"/>
+     <addaction name="separator"/>
+     <addaction name="actionCatalogSmall"/>
+     <addaction name="actionCatalogMedium"/>
+     <addaction name="actionCatalogLarge"/>
+    </widget>
+    <widget class="QMenu" name="toolBarsMenu">
+     <property name="title">
+      <string>&amp;Widgets &amp;&amp; Toolbars</string>
+     </property>
+     <addaction name="actionResetToolbars"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="actionMixingView"/>
+    <addaction name="actionGeometryView"/>
+    <addaction name="actionLayersView"/>
+    <addaction name="actionRenderingView"/>
+    <addaction name="zoomMenu"/>
+    <addaction name="catalogMenu"/>
+    <addaction name="separator"/>
+    <addaction name="toolBarsMenu"/>
+   </widget>
+   <widget class="QMenu" name="helpMenu">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionWebsite"/>
+    <addaction name="actionTutorials"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionFormats_and_Codecs"/>
+    <addaction name="actionOpenGL_extensions"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
+   <widget class="QMenu" name="sessionMenu">
+    <property name="title">
+     <string>&amp;Sources</string>
+    </property>
+    <widget class="QMenu" name="currentSourceMenu">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>&amp;Current source</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/current.png</normaloff>:/glmixer/icons/current.png</iconset>
+     </property>
+     <widget class="QMenu" name="menuAspect_Ratio">
+      <property name="title">
+       <string>&amp;Aspect Ratio</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/glmixer/icons/aspectratio_source.png</normaloff>:/glmixer/icons/aspectratio_source.png</iconset>
+      </property>
+      <addaction name="actionAspectRatioFixed"/>
+      <addaction name="actionAspectRatioResetOriginal"/>
+      <addaction name="actionAspectRatioSetRendering"/>
+     </widget>
+     <addaction name="actionEditSource"/>
+     <addaction name="actionZoomCurrentSource"/>
+     <addaction name="actionSelectCurrent"/>
+     <addaction name="actionUnchangeable"/>
+     <addaction name="menuAspect_Ratio"/>
+     <addaction name="actionResetSource"/>
+     <addaction name="actionCloneSource"/>
+     <addaction name="actionDeleteSource"/>
+    </widget>
+    <addaction name="actionNewSource"/>
+    <addaction name="actionMediaSource"/>
+    <addaction name="actionCameraSource"/>
+    <addaction name="actionFreeframeSource"/>
+    <addaction name="actionAlgorithmSource"/>
+    <addaction name="actionRenderingSource"/>
+    <addaction name="actionCaptureSource"/>
+    <addaction name="actionWebSource"/>
+    <addaction name="actionSvgSource"/>
+    <addaction name="actionShmSource"/>
+    <addaction name="actionStreamSource"/>
+    <addaction name="separator"/>
+    <addaction name="currentSourceMenu"/>
+    <addaction name="actionSelect_Next"/>
+    <addaction name="actionSelect_Previous"/>
+   </widget>
+   <widget class="QMenu" name="actionMenu">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <widget class="QMenu" name="cursorMenu">
+     <property name="title">
+      <string>C&amp;ursor</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/cursor.png</normaloff>:/glmixer/icons/cursor.png</iconset>
+     </property>
+     <addaction name="actionCursorNormal"/>
+     <addaction name="actionCursorSpring"/>
+     <addaction name="actionCursorDelay"/>
+     <addaction name="actionCursorAxis"/>
+     <addaction name="actionCursorLine"/>
+     <addaction name="actionCursorFuzzy"/>
+    </widget>
+    <addaction name="actionToolGrab"/>
+    <addaction name="actionToolScale"/>
+    <addaction name="actionToolRotate"/>
+    <addaction name="actionToolCut"/>
+    <addaction name="separator"/>
+    <addaction name="cursorMenu"/>
+   </widget>
+   <widget class="QMenu" name="renderingMenu">
+    <property name="title">
+     <string>&amp;Render</string>
+    </property>
+    <widget class="QMenu" name="aspectRatioMenu">
+     <property name="toolTip">
+      <string>Rendering aspect ratio</string>
+     </property>
+     <property name="statusTip">
+      <string>Choose rendering aspect ratio of rendering area</string>
+     </property>
+     <property name="title">
+      <string>&amp;Aspect Ratio</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/aspectratio.png</normaloff>:/glmixer/icons/aspectratio.png</iconset>
+     </property>
+     <addaction name="action4_3_aspect_ratio"/>
+     <addaction name="action3_2_aspect_ratio"/>
+     <addaction name="action16_10_aspect_ratio"/>
+     <addaction name="action16_9_aspect_ratio"/>
+     <addaction name="actionFree_aspect_ratio"/>
+    </widget>
+    <addaction name="actionToggleRenderingVisible"/>
+    <addaction name="actionPause"/>
+    <addaction name="separator"/>
+    <addaction name="actionFullscreen"/>
+    <addaction name="aspectRatioMenu"/>
+    <addaction name="actionWhite_background"/>
+   </widget>
+   <widget class="QMenu" name="menuExport">
+    <property name="title">
+     <string>E&amp;xport</string>
+    </property>
+    <addaction name="actionRecord"/>
+    <addaction name="actionPause_recording"/>
+    <addaction name="actionCopy_snapshot"/>
+    <addaction name="actionSave_snapshot"/>
+    <addaction name="separator"/>
+    <addaction name="actionShareToRAM"/>
+    <addaction name="actionShareToSPOUT"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <widget class="QMenu" name="sourceControlMenu">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>C&amp;ontrol Selection</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/glmixer/icons/videocontrol.png</normaloff>:/glmixer/icons/videocontrol.png</iconset>
+     </property>
+     <addaction name="actionSourcePlay"/>
+     <addaction name="actionSourcePause"/>
+     <addaction name="actionSourceRestart"/>
+     <addaction name="actionSourceSeekBackward"/>
+     <addaction name="actionSourceSeekForward"/>
+    </widget>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionSelectAll"/>
+    <addaction name="actionSelectInvert"/>
+    <addaction name="actionSelectNone"/>
+    <addaction name="sourceControlMenu"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="sessionMenu"/>
+   <addaction name="menuExport"/>
+   <addaction name="renderingMenu"/>
+   <addaction name="viewMenu"/>
+   <addaction name="actionMenu"/>
+   <addaction name="helpMenu"/>
+  </widget>
+  <widget class="QToolBar" name="sourceToolBar">
+   <property name="windowTitle">
+    <string>Sources </string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewSource"/>
+   <addaction name="actionMediaSource"/>
+   <addaction name="actionCameraSource"/>
+   <addaction name="actionFreeframeSource"/>
+   <addaction name="actionAlgorithmSource"/>
+   <addaction name="actionRenderingSource"/>
+   <addaction name="actionCaptureSource"/>
+   <addaction name="actionWebSource"/>
+   <addaction name="actionSvgSource"/>
+   <addaction name="actionShmSource"/>
+   <addaction name="actionStreamSource"/>
+   <addaction name="actionCloneSource"/>
+   <addaction name="separator"/>
+   <addaction name="actionDeleteSource"/>
+   <addaction name="actionSelect_Previous"/>
+   <addaction name="actionSelect_Next"/>
+  </widget>
+  <widget class="QToolBar" name="viewToolBar">
+   <property name="windowTitle">
+    <string>View</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionMixingView"/>
+   <addaction name="actionGeometryView"/>
+   <addaction name="actionLayersView"/>
+   <addaction name="actionRenderingView"/>
+   <addaction name="separator"/>
+   <addaction name="actionToggleRenderingVisible"/>
+   <addaction name="actionShow_Catalog"/>
+  </widget>
+  <widget class="QToolBar" name="fileToolBar">
+   <property name="windowTitle">
+    <string>File</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Session"/>
+   <addaction name="actionLoad_Session"/>
+   <addaction name="actionSave_Session"/>
+   <addaction name="actionClose_Session"/>
+  </widget>
+  <widget class="QToolBar" name="toolsToolBar">
+   <property name="windowTitle">
+    <string>Tools</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionToolGrab"/>
+   <addaction name="actionToolScale"/>
+   <addaction name="actionToolRotate"/>
+   <addaction name="actionToolCut"/>
+  </widget>
+  <widget class="QDockWidget" name="cursorDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/tools.png</normaloff>:/glmixer/icons/tools.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Options for the current cursor mode.</string>
+   </property>
+   <property name="windowTitle">
+    <string>Cursor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="cursorDockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>3</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_20">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="cursor_normal">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Normal cursor</string>
+         </property>
+         <property name="text">
+          <string>Normal</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/normal-cursor.png</normaloff>:/glmixer/icons/normal-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cursor_spring">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Elastic cursor</string>
+         </property>
+         <property name="text">
+          <string>Elastic</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/spring-cursor.png</normaloff>:/glmixer/icons/spring-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cursor_delay">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Delayed cursor</string>
+         </property>
+         <property name="text">
+          <string>Delay</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/delay-cursor.png</normaloff>:/glmixer/icons/delay-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cursor_axis">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Axis-aligned cursor</string>
+         </property>
+         <property name="text">
+          <string>Axis</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/axis-cursor.png</normaloff>:/glmixer/icons/axis-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cursor_line">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Line cursor</string>
+         </property>
+         <property name="text">
+          <string>Line</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/line-cursor.png</normaloff>:/glmixer/icons/line-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="cursor_fuzzy">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>33</width>
+           <height>33</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Fuzzy cursor</string>
+         </property>
+         <property name="text">
+          <string>Fuzzy</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/fuzzy-cursor.png</normaloff>:/glmixer/icons/fuzzy-cursor.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="styleSheet">
+        <string notr="true">color:palette(dark);</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="cursorOptionWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="cursorNormalOptions">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>No option</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="cursorSpringOptions">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="2" column="0" colspan="2">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>218</width>
+             <height>39</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Mass:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSlider" name="cursorSpringMass">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Make the cursor heavy or lightweight</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>20</number>
+           </property>
+           <property name="value">
+            <number>5</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Elastic</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="cursorDelayOptions">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Latency:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="cursorDelayLatency">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>How late the cursor is behind the mouse.</string>
+           </property>
+           <property name="suffix">
+            <string> second(s)</string>
+           </property>
+           <property name="minimum">
+            <double>0.200000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>3.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.200000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Filtering:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="cursorDelayFiltering">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>How many frames used to smooth the path</string>
+           </property>
+           <property name="suffix">
+            <string> frames</string>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>30</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Delay</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="cursorMagnetOptions">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Axis</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>No option</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Speed</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QLabel" name="label_12">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Triger delay</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="QSlider" name="cursorLineSpeed">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Translation speed</string>
+           </property>
+           <property name="minimum">
+            <number>30</number>
+           </property>
+           <property name="maximum">
+            <number>250</number>
+           </property>
+           <property name="value">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>94</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="2">
+          <widget class="QDoubleSpinBox" name="cursorLineWaitDuration">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>How long before the movement starts.</string>
+           </property>
+           <property name="suffix">
+            <string> second(s)</string>
+           </property>
+           <property name="minimum">
+            <double>0.200000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>3.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.200000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Line</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_2">
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="1" column="1">
+          <widget class="QSlider" name="cursorFuzzyRadius">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>250</number>
+           </property>
+           <property name="singleStep">
+            <number>10</number>
+           </property>
+           <property name="pageStep">
+            <number>50</number>
+           </property>
+           <property name="value">
+            <number>50</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Filtering</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="cursorFuzzyFiltering">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="suffix">
+            <string> frames</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>20</number>
+           </property>
+           <property name="value">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Radius</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="styleSheet">
+            <string notr="true">font: bold;</string>
+           </property>
+           <property name="text">
+            <string>Fuzzy</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="switcherDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/glmixer.png</normaloff>:/glmixer/icons/glmixer.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Switch smoothly between .glm sessions.</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolButton {
+     min-height:16 px;
+     min-width: 16 px;
+     max-height:20 px;
+     max-width: 20 px;
+}
+</string>
+   </property>
+   <property name="windowTitle">
+    <string>Session switcher</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="switcherDockWidgetContents">
+    <layout class="QVBoxLayout" name="switcherDockWidgetContentsLayout">
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <property name="topMargin">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>6</number>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="renderingToolBar">
+   <property name="windowTitle">
+    <string>Rendering &amp; Export</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionPause"/>
+   <addaction name="actionRecord"/>
+   <addaction name="actionPause_recording"/>
+   <addaction name="actionSave_snapshot"/>
+  </widget>
+  <widget class="QDockWidget" name="logDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/glmixer.png</normaloff>:/glmixer/icons/glmixer.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Execution logs </string>
+   </property>
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>&amp;Logs</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_12">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <property name="topMargin">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>6</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QToolButton" name="saveLogsToFile">
+         <property name="toolTip">
+          <string>Save Logs to file</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/textsave.png</normaloff>:/glmixer/icons/textsave.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="openLogsFolder">
+         <property name="toolTip">
+          <string>Show location of temporary log files in the system.</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/textopen.png</normaloff>:/glmixer/icons/textopen.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="copyLogsToClipboard">
+         <property name="toolTip">
+          <string>Copy to clipboard</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/textcopy.png</normaloff>:/glmixer/icons/textcopy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButtonClearLogs">
+         <property name="toolTip">
+          <string>Clear</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/clean.png</normaloff>:/glmixer/icons/clean.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTreeWidget" name="logTexts">
+       <property name="toolTip">
+        <string>Logs of GLMixer events.</string>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="showDropIndicator" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::NoSelection</enum>
+       </property>
+       <property name="textElideMode">
+        <enum>Qt::ElideMiddle</enum>
+       </property>
+       <property name="rootIsDecorated">
+        <bool>false</bool>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="itemsExpandable">
+        <bool>false</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <property name="expandsOnDoubleClick">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerVisible">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Message</string>
+        </property>
+        <property name="toolTip">
+         <string notr="true"/>
+        </property>
+        <property name="statusTip">
+         <string notr="true"/>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Origin</string>
+        </property>
+        <property name="toolTip">
+         <string notr="true"/>
+        </property>
+        <property name="statusTip">
+         <string notr="true"/>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="sourceControlToolBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Control selection</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSourcePlay"/>
+   <addaction name="actionSourcePause"/>
+   <addaction name="actionSourceRestart"/>
+   <addaction name="actionSourceSeekBackward"/>
+   <addaction name="actionSourceSeekForward"/>
+  </widget>
+  <widget class="QDockWidget" name="layoutDockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/dialog-align-and-distribute.png</normaloff>:/glmixer/icons/dialog-align-and-distribute.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Arrange and layout sources</string>
+   </property>
+   <property name="windowTitle">
+    <string>La&amp;yout</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="layoutDockWidgetContent">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <property name="leftMargin">
+      <number>3</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>3</number>
+     </property>
+     <property name="bottomMargin">
+      <number>3</number>
+     </property>
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="layoutDockWidgetContentScroll">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>244</width>
+          <height>96</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="layoutDockWidgetContentLayout">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="mixingDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/blending.png</normaloff>:/glmixer/icons/blending.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Control mixing properties of current source</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>&amp;Mixing</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="mixingDockWidgetContent">
+    <layout class="QVBoxLayout" name="mixingDockWidgetContentLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="blocnoteDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/notes.png</normaloff>:/glmixer/icons/notes.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Edit personnal notes </string>
+   </property>
+   <property name="windowTitle">
+    <string>Bloc &amp;note</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="blocnoteDockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <property name="leftMargin">
+      <number>6</number>
+     </property>
+     <property name="topMargin">
+      <number>6</number>
+     </property>
+     <property name="rightMargin">
+      <number>6</number>
+     </property>
+     <property name="bottomMargin">
+      <number>6</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="addDateToNotes">
+         <property name="toolTip">
+          <string>Add date</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/calendar.png</normaloff>:/glmixer/icons/calendar.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="addListToNotes">
+         <property name="toolTip">
+          <string>Add list of sources</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/listsources.png</normaloff>:/glmixer/icons/listsources.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="pasteNotes">
+         <property name="toolTip">
+          <string>Paste text</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/textpaste.png</normaloff>:/glmixer/icons/textpaste.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QToolButton" name="copyNotes">
+         <property name="toolTip">
+          <string>Copy to clipboard</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/textcopy.png</normaloff>:/glmixer/icons/textcopy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="clearNotes">
+         <property name="toolTip">
+          <string>Clear</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/clean.png</normaloff>:/glmixer/icons/clean.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="blocNoteEdit">
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>Personnal notes for this session</string>
+       </property>
+       <property name="autoFormatting">
+        <set>QTextEdit::AutoNone</set>
+       </property>
+       <property name="acceptRichText">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="tagsDockWidget">
+   <property name="windowIcon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/tagDefault.png</normaloff>:/glmixer/icons/tagDefault.png</iconset>
+   </property>
+   <property name="toolTip">
+    <string>Set color tags</string>
+   </property>
+   <property name="windowTitle">
+    <string>Ta&amp;gs</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="tagsDockWidgetContent">
+    <layout class="QVBoxLayout" name="tagsDockWidgetContentLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="actionHistoryDockWidget">
+   <property name="toolTip">
+    <string>History of actions for undo-redo</string>
+   </property>
+   <property name="windowTitle">
+    <string>Action History</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="actionHistorydockWidgetContents">
+    <layout class="QVBoxLayout" name="actionHistorydockWidgetContentsLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="historyBackwardKey">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/media-skip-backward.png</normaloff>:/glmixer/icons/media-skip-backward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="historyBackward">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/media-seek-backward.png</normaloff>:/glmixer/icons/media-seek-backward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="historyForward">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/media-seek-forward.png</normaloff>:/glmixer/icons/media-seek-forward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="historyForwardKey">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/media-skip-forward.png</normaloff>:/glmixer/icons/media-skip-forward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>18</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QToolButton" name="historyClear">
+         <property name="toolTip">
+          <string>Clear</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/clean.png</normaloff>:/glmixer/icons/clean.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/process-stop.png</normaloff>:/glmixer/icons/process-stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="statusTip">
+    <string>Exits the application</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionFormats_and_Codecs">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/video.png</normaloff>:/glmixer/icons/video.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Libav Formats and Codecs</string>
+   </property>
+   <property name="statusTip">
+    <string>Display the list of video codecs that can be read.</string>
+   </property>
+  </action>
+  <action name="actionOpenGL_extensions">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/3d.png</normaloff>:/glmixer/icons/3d.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;OpenGL</string>
+   </property>
+   <property name="statusTip">
+    <string>Display the list of OpenGL extensions that your system supports.</string>
+   </property>
+  </action>
+  <action name="actionFullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/fullscreen.png</normaloff>:/glmixer/icons/fullscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Full screen</string>
+   </property>
+   <property name="toolTip">
+    <string>Full screen</string>
+   </property>
+   <property name="statusTip">
+    <string>Set the output window to fullscreen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionFree_aspect_ratio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Free window  size</string>
+   </property>
+   <property name="toolTip">
+    <string>Set rendering aspect ratio to free window size</string>
+   </property>
+   <property name="statusTip">
+    <string>Allows to apply the aspect ratio of the output window to the rendering area </string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/info.png</normaloff>:/glmixer/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About GLMixer</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionMixingView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/mixer.png</normaloff>:/glmixer/icons/mixer.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Mixing view</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch to mixing view F1</string>
+   </property>
+   <property name="statusTip">
+    <string>The mixing view allows to change the transparency of the sources.</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionGeometryView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/manipulation.png</normaloff>:/glmixer/icons/manipulation.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Geometry view</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch to geometry view F2</string>
+   </property>
+   <property name="statusTip">
+    <string>The geometry view allows to move, scale and rotate sources.</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionLayersView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/depth.png</normaloff>:/glmixer/icons/depth.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Layers view</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch to layers view F3</string>
+   </property>
+   <property name="statusTip">
+    <string>The layers view allows to organize the sources in layers.</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionNew_Session">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/filenew.png</normaloff>:/glmixer/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New session</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new session</string>
+   </property>
+   <property name="statusTip">
+    <string>Close current and starts a new Session</string>
+   </property>
+  </action>
+  <action name="actionLoad_Session">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/fileopen.png</normaloff>:/glmixer/icons/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open session</string>
+   </property>
+   <property name="toolTip">
+    <string>Open session file</string>
+   </property>
+   <property name="statusTip">
+    <string>Loads a session file (*.glm)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_Session">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/filesave.png</normaloff>:/glmixer/icons/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save session</string>
+   </property>
+   <property name="toolTip">
+    <string>Save session</string>
+   </property>
+   <property name="statusTip">
+    <string>Saves current session  file (*.glm)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionCameraSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/camera.png</normaloff>:/glmixer/icons/camera.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source &amp;device</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a live source showing frames of a connected device (e.g. webcam)</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a live source showing frames of a connected device (e.g. webcam)</string>
+   </property>
+  </action>
+  <action name="actionRenderingSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/display-source.png</normaloff>:/glmixer/icons/display-source.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source &amp;loopback</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a  source whith the content of the output window.</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a  source whith the content of the output window.</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/zoom-in.png</normaloff>:/glmixer/icons/zoom-in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom &amp;in</string>
+   </property>
+   <property name="statusTip">
+    <string>Increment the zoom of the current view</string>
+   </property>
+   <property name="shortcut">
+    <string>+</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/zoom-out.png</normaloff>:/glmixer/icons/zoom-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom &amp;out</string>
+   </property>
+   <property name="statusTip">
+    <string>Decrement the zoom of the current view</string>
+   </property>
+   <property name="shortcut">
+    <string>-</string>
+   </property>
+  </action>
+  <action name="actionZoomReset">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/zoom-original.png</normaloff>:/glmixer/icons/zoom-original.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Zoom reset</string>
+   </property>
+   <property name="statusTip">
+    <string>Resets the zoom of the current view</string>
+   </property>
+   <property name="shortcut">
+    <string>*</string>
+   </property>
+  </action>
+  <action name="actionZoomBestFit">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/zoom-fit-best.png</normaloff>:/glmixer/icons/zoom-fit-best.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom &amp;best fit</string>
+   </property>
+   <property name="statusTip">
+    <string>Computes a zoom factor which allows to see every sources of the current view</string>
+   </property>
+   <property name="shortcut">
+    <string>/</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/info.png</normaloff>:/glmixer/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="actionCaptureSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/photo-source.png</normaloff>:/glmixer/icons/photo-source.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source capture &amp;frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source with a snapshot of the  output window.</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source with a snapshot of the  output window.</string>
+   </property>
+  </action>
+  <action name="actionAlgorithmSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/computer.png</normaloff>:/glmixer/icons/computer.png</iconset>
+   </property>
+   <property name="text">
+    <string>New so&amp;urce algorithm</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source using algorithms to generate graphics.</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source using algorithms to generate graphics.</string>
+   </property>
+  </action>
+  <action name="actionCloneSource">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/copy-source.png</normaloff>:/glmixer/icons/copy-source.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Clone</string>
+   </property>
+   <property name="toolTip">
+    <string>Creates a source cloning the current one.</string>
+   </property>
+   <property name="statusTip">
+    <string>Creates a source cloning the current one.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionDeleteSource">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/delete.png</normaloff>:/glmixer/icons/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete current source</string>
+   </property>
+   <property name="statusTip">
+    <string>Removes the current source from the session.</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionAppend_Session">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Append session</string>
+   </property>
+   <property name="statusTip">
+    <string>Loads a session file and appends all its sources to the current session.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="actionSave_Session_as">
+   <property name="text">
+    <string>Sa&amp;ve session as...</string>
+   </property>
+   <property name="iconText">
+    <string>Save session as</string>
+   </property>
+   <property name="toolTip">
+    <string>Save session as</string>
+   </property>
+   <property name="statusTip">
+    <string>Save session under another file name</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionToolGrab">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/cursor-openhand.png</normaloff>
+     <disabledoff>:/glmixer/icons/cursor-openhand_off.png</disabledoff>:/glmixer/icons/cursor-openhand.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Grab</string>
+   </property>
+   <property name="toolTip">
+    <string>Grab tool</string>
+   </property>
+   <property name="statusTip">
+    <string>Grab and move sources in the canvas.</string>
+   </property>
+   <property name="shortcut">
+    <string>G</string>
+   </property>
+  </action>
+  <action name="actionToolScale">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/cursor-sizeall.png</normaloff>
+     <disabledoff>:/glmixer/icons/cursor-sizeall_off.png</disabledoff>:/glmixer/icons/cursor-sizeall.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Scale</string>
+   </property>
+   <property name="toolTip">
+    <string>Scale tool</string>
+   </property>
+   <property name="statusTip">
+    <string>Resize sources in the canvas.</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actionToolRotate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/cursor-rotateall.png</normaloff>
+     <disabledoff>:/glmixer/icons/cursor-rotateall_off.png</disabledoff>:/glmixer/icons/cursor-rotateall.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Rotate</string>
+   </property>
+   <property name="toolTip">
+    <string>Rotate tool</string>
+   </property>
+   <property name="statusTip">
+    <string>Rotate sources in the canvas.</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionToolCut">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/cursor-dsplit.png</normaloff>
+     <disabledoff>:/glmixer/icons/cursor-dsplit_off.png</disabledoff>:/glmixer/icons/cursor-dsplit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Crop</string>
+   </property>
+   <property name="toolTip">
+    <string>Crop tool</string>
+   </property>
+   <property name="statusTip">
+    <string>Crop or extend what is visible of sources</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="actionCursorNormal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/normal-cursor.png</normaloff>:/glmixer/icons/normal-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Normal cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor follows the mouse (default)</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actionCursorSpring">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/spring-cursor.png</normaloff>:/glmixer/icons/spring-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Elastic cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor is attracted by the mouse but is more 'heavy'.</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="actionCursorDelay">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/delay-cursor.png</normaloff>:/glmixer/icons/delay-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delay cursor</string>
+   </property>
+   <property name="toolTip">
+    <string>Delay cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor follows the mouse with a latency</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
+   </property>
+  </action>
+  <action name="actionCursorFuzzy">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/fuzzy-cursor.png</normaloff>:/glmixer/icons/fuzzy-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Fuzzy cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor makes fuzzy movements around the mouse</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="actionSelect_Next">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/next.png</normaloff>:/glmixer/icons/next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ne&amp;xt</string>
+   </property>
+   <property name="iconText">
+    <string>Next</string>
+   </property>
+   <property name="toolTip">
+    <string>Select next source
+Shortcut:                                    Tab</string>
+   </property>
+   <property name="statusTip">
+    <string>Select the next source in the list (shortcut is Tab)</string>
+   </property>
+  </action>
+  <action name="actionSelect_Previous">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/previous.png</normaloff>:/glmixer/icons/previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Previous</string>
+   </property>
+   <property name="toolTip">
+    <string>Select previous source
+Shortcut:                         Ctrl + Tab</string>
+   </property>
+   <property name="statusTip">
+    <string>Select the previous source in the list (shortcut is Ctrl + Tab)</string>
+   </property>
+  </action>
+  <action name="actionShow_Catalog">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/image-collection.png</normaloff>:/glmixer/icons/image-collection.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Visible</string>
+   </property>
+   <property name="toolTip">
+    <string>Show catalog F6</string>
+   </property>
+   <property name="statusTip">
+    <string>Show / hide a catalog of all sources in the current view.</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="actionCatalogSmall">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Small</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows small previews of sources in the catalog.</string>
+   </property>
+  </action>
+  <action name="actionCatalogMedium">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Medium</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows medium previews of sources in the catalog.</string>
+   </property>
+  </action>
+  <action name="actionCatalogLarge">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Large</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows large previews of sources in the catalog.</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/gear.png</normaloff>:/glmixer/icons/gear.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+   <property name="statusTip">
+    <string>Opens the preferences dialog.</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::PreferencesRole</enum>
+   </property>
+  </action>
+  <action name="actionWhite_background">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/whitebg.png</normaloff>:/glmixer/icons/whitebg.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;White background</string>
+   </property>
+   <property name="statusTip">
+    <string>Set the background to white (instead of black)</string>
+   </property>
+  </action>
+  <action name="actionToggleRenderingVisible">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/off.png</normaloff>
+     <normalon>:/glmixer/icons/on.png</normalon>:/glmixer/icons/off.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;On air</string>
+   </property>
+   <property name="toolTip">
+    <string>Enable / Disable rendering F5</string>
+   </property>
+   <property name="statusTip">
+    <string>Output window is active when &quot;On air&quot;</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionResetToolbars">
+   <property name="text">
+    <string>&amp;Restore default</string>
+   </property>
+   <property name="statusTip">
+    <string>Restore default toolbars and window layout.</string>
+   </property>
+  </action>
+  <action name="actionRecent_session">
+   <property name="text">
+    <string>Open &amp;recent</string>
+   </property>
+   <property name="toolTip">
+    <string>Open recent sessions</string>
+   </property>
+   <property name="statusTip">
+    <string>Open recent sessions</string>
+   </property>
+  </action>
+  <action name="actionCursorAxis">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/axis-cursor.png</normaloff>:/glmixer/icons/axis-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Axis cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor follows the axis</string>
+   </property>
+   <property name="shortcut">
+    <string>A</string>
+   </property>
+  </action>
+  <action name="action4_3_aspect_ratio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/aspectratio_4_3.png</normaloff>:/glmixer/icons/aspectratio_4_3.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;4:3</string>
+   </property>
+   <property name="toolTip">
+    <string>Set rendering aspect ratio to 4:3</string>
+   </property>
+  </action>
+  <action name="action3_2_aspect_ratio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/aspectratio_3_2.png</normaloff>:/glmixer/icons/aspectratio_3_2.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;3:2</string>
+   </property>
+   <property name="toolTip">
+    <string>Set rendering aspect ratio to 3:2</string>
+   </property>
+  </action>
+  <action name="action16_10_aspect_ratio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/aspectratio_16_10.png</normaloff>:/glmixer/icons/aspectratio_16_10.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;16:10</string>
+   </property>
+   <property name="toolTip">
+    <string>Set rendering aspect ratio to 16:10</string>
+   </property>
+  </action>
+  <action name="action16_9_aspect_ratio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/aspectratio_16_9.png</normaloff>:/glmixer/icons/aspectratio_16_9.png</iconset>
+   </property>
+   <property name="text">
+    <string>16:&amp;9</string>
+   </property>
+   <property name="toolTip">
+    <string>Set rendering aspect ratio to 16:9</string>
+   </property>
+  </action>
+  <action name="actionZoomCurrentSource">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/zoom-fit-source.png</normaloff>:/glmixer/icons/zoom-fit-source.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Zoom</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom in current source</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom in current source</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-playback-pause.png</normaloff>:/glmixer/icons/media-playback-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause session</string>
+   </property>
+   <property name="statusTip">
+    <string>Suspend / resume the rendering (all sources)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionRecord">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/record.png</normaloff>
+     <normalon>:/glmixer/icons/recording.png</normalon>:/glmixer/icons/record.png</iconset>
+   </property>
+   <property name="text">
+    <string>Start / Stop &amp;Recording</string>
+   </property>
+   <property name="toolTip">
+    <string>Start / Stop Recording</string>
+   </property>
+   <property name="statusTip">
+    <string>Record the rendering output to a video file.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionPause_recording">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/record-pause.png</normaloff>:/glmixer/icons/record-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Pause recording</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause recording</string>
+   </property>
+   <property name="statusTip">
+    <string>Suspend / resume the recording</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
+  </action>
+  <action name="actionSave_snapshot">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/photo-save.png</normaloff>:/glmixer/icons/photo-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Capture &amp;frame and save to file</string>
+   </property>
+   <property name="toolTip">
+    <string>Capture and save current rendered frame</string>
+   </property>
+   <property name="statusTip">
+    <string>Take a screenshot and save to image file.</string>
+   </property>
+  </action>
+  <action name="actionCursorLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/line-cursor.png</normaloff>:/glmixer/icons/line-cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Line cursor</string>
+   </property>
+   <property name="statusTip">
+    <string>The cursor moves on a line to reach the mouse position.</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="actionUnchangeable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/unchangeable.png</normaloff>:/glmixer/icons/unchangeable.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Unchangeable</string>
+   </property>
+   <property name="toolTip">
+    <string>When unchangeable, the source cannot be modified in any way.</string>
+   </property>
+   <property name="statusTip">
+    <string>When unchangeable, the source cannot be modified in any way.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionResetSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/view-refresh.png</normaloff>:/glmixer/icons/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Reset</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset all properties to default (from preferences)</string>
+   </property>
+   <property name="statusTip">
+    <string>Reset all properties to default (from preferences)</string>
+   </property>
+  </action>
+  <action name="actionMediaSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/fileimport.png</normaloff>:/glmixer/icons/fileimport.png</iconset>
+   </property>
+   <property name="text">
+    <string>New &amp;source(s) video(s)</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source from video or image file(s)</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source from video or image file(s)</string>
+   </property>
+  </action>
+  <action name="actionSelectCurrent">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/select.png</normaloff>:/glmixer/icons/select.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Toggle select</string>
+   </property>
+   <property name="toolTip">
+    <string>Add/remove to selection</string>
+   </property>
+   <property name="statusTip">
+    <string>Add or remove the current source to the selection</string>
+   </property>
+  </action>
+  <action name="actionSelectAll">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/selectall.png</normaloff>:/glmixer/icons/selectall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select &amp;All</string>
+   </property>
+   <property name="toolTip">
+    <string>Select All</string>
+   </property>
+   <property name="statusTip">
+    <string>Add all sources to the selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionSelectInvert">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/selectinvert.png</normaloff>:/glmixer/icons/selectinvert.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Invert selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Invert selection</string>
+   </property>
+   <property name="statusTip">
+    <string>Invert the selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionSelectNone">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Clear selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear selection</string>
+   </property>
+   <property name="statusTip">
+    <string>Clear the selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
+  </action>
+  <action name="actionSvgSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/svg.png</normaloff>:/glmixer/icons/svg.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source &amp;vector graphics</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a  source displaying vector graphics (SVG)</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a  source displaying vector graphics (SVG)</string>
+   </property>
+  </action>
+  <action name="actionShmSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/ram.png</normaloff>:/glmixer/icons/ram.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source shared &amp;memory</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source reading from shared memory</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source reading from shared memory</string>
+   </property>
+  </action>
+  <action name="actionShareToRAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/ram-record.png</normaloff>
+     <normalon>:/glmixer/icons/ram-recording.png</normalon>:/glmixer/icons/ram-record.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Share to RAM</string>
+   </property>
+   <property name="statusTip">
+    <string>Share the rendering to memory </string>
+   </property>
+  </action>
+  <action name="actionSourcePlay">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-playback-start.png</normaloff>:/glmixer/icons/media-playback-start.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Play / Stop</string>
+   </property>
+   <property name="toolTip">
+    <string>Play / Stop (all selected sources) </string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Space</string>
+   </property>
+  </action>
+  <action name="actionSourceRestart">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-frame-backward.png</normaloff>:/glmixer/icons/media-frame-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Restart</string>
+   </property>
+   <property name="toolTip">
+    <string>Restart at begin (all selected sources)</string>
+   </property>
+   <property name="shortcut">
+    <string>Home</string>
+   </property>
+  </action>
+  <action name="actionSourceSeekBackward">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-skip-backward.png</normaloff>:/glmixer/icons/media-skip-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Backward</string>
+   </property>
+   <property name="toolTip">
+    <string>Seek backward (all selected sources) </string>
+   </property>
+   <property name="shortcut">
+    <string>PgUp</string>
+   </property>
+  </action>
+  <action name="actionSourcePause">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-playback-pause.png</normaloff>:/glmixer/icons/media-playback-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pa&amp;use / Resume</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Pause / Resume (all selected sources)</string>
+   </property>
+   <property name="shortcut">
+    <string>End</string>
+   </property>
+  </action>
+  <action name="actionSourceSeekForward">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/media-skip-forward.png</normaloff>:/glmixer/icons/media-skip-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Forward</string>
+   </property>
+   <property name="toolTip">
+    <string>Seek forward (all selected sources)</string>
+   </property>
+   <property name="shortcut">
+    <string>PgDown</string>
+   </property>
+  </action>
+  <action name="actionRenderingView">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/displayview.png</normaloff>:/glmixer/icons/displayview.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Rendering view</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch to Rendering view F4</string>
+   </property>
+   <property name="statusTip">
+    <string>Shows the rendering as displayed in the output window</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionClose_Session">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/fileclosed.png</normaloff>:/glmixer/icons/fileclosed.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close session</string>
+   </property>
+   <property name="statusTip">
+    <string>Close current session</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionFreeframeSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/plugin-source.png</normaloff>:/glmixer/icons/plugin-source.png</iconset>
+   </property>
+   <property name="text">
+    <string>N&amp;ew source Plugin</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source with GPU generated graphics</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source with GPU generated graphics</string>
+   </property>
+  </action>
+  <action name="actionCopy_snapshot">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/photo.png</normaloff>:/glmixer/icons/photo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Capture frame to clipboard</string>
+   </property>
+   <property name="statusTip">
+    <string>Take a screenshot and copy it to clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionAspectRatioFixed">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/aspectratio_fixed.png</normaloff>:/glmixer/icons/aspectratio_fixed.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Fixed</string>
+   </property>
+   <property name="toolTip">
+    <string>Fix the aspect ratio as it is now.</string>
+   </property>
+   <property name="statusTip">
+    <string>Fix the aspect ratio as it is now.</string>
+   </property>
+  </action>
+  <action name="actionAspectRatioResetOriginal">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/size-ratio-original.png</normaloff>:/glmixer/icons/size-ratio-original.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Reset to original</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset aspect ratio to original format</string>
+   </property>
+   <property name="statusTip">
+    <string>Reset aspect ratio to original format</string>
+   </property>
+  </action>
+  <action name="actionAspectRatioSetRendering">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/size-ratio-frame.png</normaloff>:/glmixer/icons/size-ratio-frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Set to rendering</string>
+   </property>
+   <property name="toolTip">
+    <string>Set aspect ratio to rendering format</string>
+   </property>
+   <property name="statusTip">
+    <string>Set aspect ratio to rendering format</string>
+   </property>
+  </action>
+  <action name="actionNewSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/newsource.png</normaloff>:/glmixer/icons/newsource.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New source</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new source</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionWebSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/web.png</normaloff>:/glmixer/icons/web.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source &amp;Web page</string>
+   </property>
+   <property name="iconText">
+    <string>New source Web page</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source displaying web or HTML page.</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source displaying web or HTML page.</string>
+   </property>
+  </action>
+  <action name="actionShareToSPOUT">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/SpoutLogo.png</normaloff>:/glmixer/icons/SpoutLogo.png</iconset>
+   </property>
+   <property name="text">
+    <string>S&amp;hare to SPOUT</string>
+   </property>
+  </action>
+  <action name="actionTag_Default">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Default</string>
+   </property>
+  </action>
+  <action name="actionTag_1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Tag 1</string>
+   </property>
+  </action>
+  <action name="actionTag_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Tag 2</string>
+   </property>
+  </action>
+  <action name="actionEditSource">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/current.png</normaloff>:/glmixer/icons/current.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Edit </string>
+   </property>
+   <property name="toolTip">
+    <string>Edit current source properties</string>
+   </property>
+  </action>
+  <action name="actionWebsite">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/go-home.png</normaloff>:/glmixer/icons/go-home.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Website</string>
+   </property>
+   <property name="toolTip">
+    <string>Visit GlMixer website</string>
+   </property>
+  </action>
+  <action name="actionTutorials">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/vimeo.png</normaloff>:/glmixer/icons/vimeo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Video Tutorials</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>&amp;Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="actionStreamSource">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/glmixer/icons/networkstream.png</normaloff>:/glmixer/icons/networkstream.png</iconset>
+   </property>
+   <property name="text">
+    <string>New source streamin&amp;g</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a source reading a network stream</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a source reading a network stream</string>
+   </property>
+  </action>
+  <action name="actionDfgdg">
+   <property name="text">
+    <string>dfgdg</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SourceDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>SourceDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QGLWidget</class>
+   <extends>QWidget</extends>
+   <header>QGLWidget</header>
+   <container>1</container>
+   <slots>
+    <slot>changeUpdatePeriod(int)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>toolButtonZoomFit</sender>
+   <signal>clicked()</signal>
+   <receiver>actionZoomBestFit</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1134</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButtonZoomMinus</sender>
+   <signal>clicked()</signal>
+   <receiver>actionZoomOut</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1110</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButtonZoomPlus</sender>
+   <signal>clicked()</signal>
+   <receiver>actionZoomIn</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1086</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButtonZoomReset</sender>
+   <signal>clicked()</signal>
+   <receiver>actionZoomReset</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1062</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>restartWhereStoppedCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>widget_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1414</x>
+     <y>864</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1414</x>
+     <y>889</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pauseButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frameForwardButton</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>859</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>859</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGeometryView</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionToolCut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButtonZoomCurrent</sender>
+   <signal>clicked()</signal>
+   <receiver>actionZoomCurrentSource</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1158</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButtonClearLogs</sender>
+   <signal>clicked()</signal>
+   <receiver>logTexts</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>380</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>195</x>
+     <y>554</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pasteNotes</sender>
+   <signal>clicked()</signal>
+   <receiver>blocNoteEdit</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>654</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearNotes</sender>
+   <signal>clicked()</signal>
+   <receiver>blocNoteEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>246</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pauseButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>fastForwardButton</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>846</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>846</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>sourceBlendingChanged()</slot>
+  <slot>sourceColoringChanged()</slot>
+  <slot>sourceBlendingMaskChanged()</slot>
+  <slot>sourceLevelsChanged()</slot>
+  <slot>sourceFilterChanged()</slot>
+ </slots>
+</ui>

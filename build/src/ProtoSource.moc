@@ -1,0 +1,206 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'ProtoSource.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.7)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "../../src/ProtoSource.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'ProtoSource.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.7. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_ProtoSource[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      35,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       8,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      58,   13,   12,   12, 0x05,
+     211,  171,   12,   12, 0x25,
+     346,  311,   12,   12, 0x25,
+     463,  433,   12,   12, 0x25,
+     562,  537,   12,   12, 0x25,
+     643,  623,   12,   12, 0x25,
+     706,  691,   12,   12, 0x25,
+     751,  741,   12,   12, 0x25,
+
+ // methods: signature, parameters, type, tag, flags
+     775,  773,   12,   12, 0x02,
+     813,  793,   12,   12, 0x02,
+     879,  876,   12,   12, 0x02,
+     920,  906,   12,   12, 0x02,
+     955,  951,   12,   12, 0x02,
+     993,  991,   12,   12, 0x02,
+    1020, 1011,   12,   12, 0x02,
+    1036, 1034,   12,   12, 0x02,
+    1056, 1054,   12,   12, 0x02,
+    1076, 1034,   12,   12, 0x02,
+    1096, 1094,   12,   12, 0x02,
+    1118, 1116,   12,   12, 0x02,
+    1138, 1136,   12,   12, 0x02,
+    1157,  773,   12,   12, 0x02,
+    1177,  876,   12,   12, 0x02,
+    1197, 1034,   12,   12, 0x02,
+    1226, 1224,   12,   12, 0x02,
+    1276, 1254,   12,   12, 0x02,
+    1322,  876,   12,   12, 0x02,
+    1342,  876,   12,   12, 0x02,
+    1382, 1363,   12,   12, 0x02,
+    1413, 1411,   12,   12, 0x02,
+    1444, 1034,   12,   12, 0x02,
+    1467, 1411,   12,   12, 0x02,
+    1487, 1034,   12,   12, 0x02,
+    1509, 1503,   12,   12, 0x02,
+    1532, 1503,   12,   12, 0x02,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_ProtoSource[] = {
+    "ProtoSource\0\0signature,arg0,arg1,arg2,arg3,arg4,arg5,arg6\0"
+    "methodCalled(QString,QVariantPair,QVariantPair,QVariantPair,QVariantPa"
+    "ir,QVariantPair,QVariantPair,QVariantPair)\0"
+    "signature,arg0,arg1,arg2,arg3,arg4,arg5\0"
+    "methodCalled(QString,QVariantPair,QVariantPair,QVariantPair,QVariantPa"
+    "ir,QVariantPair,QVariantPair)\0"
+    "signature,arg0,arg1,arg2,arg3,arg4\0"
+    "methodCalled(QString,QVariantPair,QVariantPair,QVariantPair,QVariantPa"
+    "ir,QVariantPair)\0"
+    "signature,arg0,arg1,arg2,arg3\0"
+    "methodCalled(QString,QVariantPair,QVariantPair,QVariantPair,QVariantPa"
+    "ir)\0"
+    "signature,arg0,arg1,arg2\0"
+    "methodCalled(QString,QVariantPair,QVariantPair,QVariantPair)\0"
+    "signature,arg0,arg1\0"
+    "methodCalled(QString,QVariantPair,QVariantPair)\0"
+    "signature,arg0\0methodCalled(QString,QVariantPair)\0"
+    "signature\0methodCalled(QString)\0n\0"
+    "_setName(QString)\0px,py,sx,sy,rx,ry,a\0"
+    "_setGeometry(double,double,double,double,double,double,double)\0"
+    "on\0_setFixedAspectRatio(bool)\0"
+    "textureCoords\0_setTextureCoordinates(QRectF)\0"
+    "x,y\0_setAlphaCoordinates(double,double)\0"
+    "a\0_setAlpha(double)\0maskType\0_setMask(int)\0"
+    "c\0_setColor(QColor)\0b\0_setBrightness(int)\0"
+    "_setContrast(int)\0s\0_setSaturation(int)\0"
+    "h\0_setHueShift(int)\0l\0_setThreshold(int)\0"
+    "_setPosterized(int)\0_setChromaKey(bool)\0"
+    "_setChromaKeyColor(QColor)\0t\0"
+    "_setChromaKeyTolerance(int)\0"
+    "g,minI,maxI,minO,maxO\0"
+    "_setGamma(double,double,double,double,double)\0"
+    "_setPixelated(bool)\0_setModifiable(bool)\0"
+    "sfactor,dfactor,eq\0_setBlending(uint,uint,uint)\0"
+    "i\0_setInvertMode(invertModeType)\0"
+    "_setFilter(filterType)\0_setInvertMode(int)\0"
+    "_setFilter(int)\0r,g,b\0_setColor(int,int,int)\0"
+    "_setChromaKeyColor(int,int,int)\0"
+};
+
+void ProtoSource::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        ProtoSource *_t = static_cast<ProtoSource *>(_o);
+        switch (_id) {
+        case 0: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3])),(*reinterpret_cast< QVariantPair(*)>(_a[4])),(*reinterpret_cast< QVariantPair(*)>(_a[5])),(*reinterpret_cast< QVariantPair(*)>(_a[6])),(*reinterpret_cast< QVariantPair(*)>(_a[7])),(*reinterpret_cast< QVariantPair(*)>(_a[8]))); break;
+        case 1: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3])),(*reinterpret_cast< QVariantPair(*)>(_a[4])),(*reinterpret_cast< QVariantPair(*)>(_a[5])),(*reinterpret_cast< QVariantPair(*)>(_a[6])),(*reinterpret_cast< QVariantPair(*)>(_a[7]))); break;
+        case 2: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3])),(*reinterpret_cast< QVariantPair(*)>(_a[4])),(*reinterpret_cast< QVariantPair(*)>(_a[5])),(*reinterpret_cast< QVariantPair(*)>(_a[6]))); break;
+        case 3: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3])),(*reinterpret_cast< QVariantPair(*)>(_a[4])),(*reinterpret_cast< QVariantPair(*)>(_a[5]))); break;
+        case 4: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3])),(*reinterpret_cast< QVariantPair(*)>(_a[4]))); break;
+        case 5: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2])),(*reinterpret_cast< QVariantPair(*)>(_a[3]))); break;
+        case 6: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QVariantPair(*)>(_a[2]))); break;
+        case 7: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->_setName((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->_setGeometry((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6])),(*reinterpret_cast< double(*)>(_a[7]))); break;
+        case 10: _t->_setFixedAspectRatio((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 11: _t->_setTextureCoordinates((*reinterpret_cast< QRectF(*)>(_a[1]))); break;
+        case 12: _t->_setAlphaCoordinates((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 13: _t->_setAlpha((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 14: _t->_setMask((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->_setColor((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 16: _t->_setBrightness((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->_setContrast((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->_setSaturation((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: _t->_setHueShift((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: _t->_setThreshold((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 21: _t->_setPosterized((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: _t->_setChromaKey((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 23: _t->_setChromaKeyColor((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 24: _t->_setChromaKeyTolerance((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 25: _t->_setGamma((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5]))); break;
+        case 26: _t->_setPixelated((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: _t->_setModifiable((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 28: _t->_setBlending((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3]))); break;
+        case 29: _t->_setInvertMode((*reinterpret_cast< invertModeType(*)>(_a[1]))); break;
+        case 30: _t->_setFilter((*reinterpret_cast< filterType(*)>(_a[1]))); break;
+        case 31: _t->_setInvertMode((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 32: _t->_setFilter((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: _t->_setColor((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 34: _t->_setChromaKeyColor((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData ProtoSource::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject ProtoSource::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_ProtoSource,
+      qt_meta_data_ProtoSource, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &ProtoSource::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *ProtoSource::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *ProtoSource::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_ProtoSource))
+        return static_cast<void*>(const_cast< ProtoSource*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int ProtoSource::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 35)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 35;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void ProtoSource::methodCalled(QString _t1, QVariantPair _t2, QVariantPair _t3, QVariantPair _t4, QVariantPair _t5, QVariantPair _t6, QVariantPair _t7, QVariantPair _t8)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)), const_cast<void*>(reinterpret_cast<const void*>(&_t6)), const_cast<void*>(reinterpret_cast<const void*>(&_t7)), const_cast<void*>(reinterpret_cast<const void*>(&_t8)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+QT_END_MOC_NAMESPACE

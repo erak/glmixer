@@ -1,0 +1,23 @@
+id ICON "scribbleMix.ico"
+
+1 VERSIONINFO 
+FILEVERSION 1,0,0,0  
+PRODUCTVERSION 1,4,0,0  
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName", "bhbn"
+			VALUE "FileDescription", "scribble draw GLMixer"
+			VALUE "LegalCopyright", "Bruno Herbelin"
+			VALUE "OriginalFilename", "sccibbleMix.exe"
+			VALUE "ProductName", "scribbleMix"
+		END
+	END
+	
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1252
+	END
+END

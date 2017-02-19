@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 2.8)
+PROJECT(LIBFREEFRAMEGL)
+
+SET(CMAKE_CXX_FLAGS "-fno-strict-aliasing -fPIC ${CMAKE_CXX_FLAGS}" )
+
+ADD_LIBRARY(FreeFrameGL
+    ${FREEFRAMEGL_DIR_PLUGINS}/FFGLPluginInfo.cpp 
+    ${FREEFRAMEGL_DIR_PLUGINS}/FFGLPluginInfoData.cpp 
+    ${FREEFRAMEGL_DIR_PLUGINS}/FFGL.cpp 
+    ${FREEFRAMEGL_DIR_PLUGINS}/FFGLPluginManager.cpp 
+    ${FREEFRAMEGL_DIR_PLUGINS}/FFGLPluginSDK.cpp
+    ${FREEFRAMEGL_DIR_HOST}/FFGLPluginInstance.cpp
+)
+
+

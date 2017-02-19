@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FFGLSourceCreationDialog</class>
+ <widget class="QDialog" name="FFGLSourceCreationDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>354</width>
+    <height>686</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GLMixer - New plugin source</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/glmixer/icons/plugin-source.png</normaloff>:/glmixer/icons/plugin-source.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="SourceDisplayWidget" name="preview" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>100</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget1" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Select plugin:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../icons.qrc">:/glmixer/icons/freeframe.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="helpFreeFrameButton">
+          <property name="toolTip">
+           <string>Open Online Documentation</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+     max-height: 16px;
+     max-width: 16px;
+        font: bold;
+}
+
+</string>
+          </property>
+          <property name="text">
+           <string>?</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/question.png</normaloff>:/glmixer/icons/question.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="freeframeEmbededPlugin">
+        <property name="text">
+         <string>E&amp;mbeded plugin</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="freeframeEmbededList">
+        <property name="toolTip">
+         <string>Select a plugin generating graphics to become a source. </string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Select...</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Screen capture </string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/display-capture.png</normaloff>:/glmixer/icons/display-capture.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Webcam</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/glmixer/icons/webcam.png</normaloff>:/glmixer/icons/webcam.png</iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="freeframeFilePlugin">
+        <property name="text">
+         <string>Other Freeframe plugin</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetSelectPluginFile" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QComboBox" name="freeframeFileList">
+           <property name="toolTip">
+            <string>Select a FreeFrame DLL generating graphics to become a source.</string>
+           </property>
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <property name="maxCount">
+            <number>10</number>
+           </property>
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertAtTop</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+           </property>
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="freeframeOpenfile">
+           <property name="toolTip">
+            <string>Browse to open a shared library file (.dll, .so or .bundle).</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/folderadd.png</normaloff>:/glmixer/icons/folderadd.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="freeframeDeleteFile">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/fileclose.png</normaloff>:/glmixer/icons/fileclose.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="freeframeLabelWarning">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Warning: &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The selected plugin is an &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic;&quot;&gt;effect&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; filter; it may not generate any graphics.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="indent">
+         <number>10</number>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../icons.qrc">:/glmixer/icons/shadertoy_black.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="helpShadertoyButton">
+          <property name="toolTip">
+           <string>Open Online Documentation</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton {
+     min-height: 16px;
+     min-width: 16px;
+     max-height: 16px;
+     max-width: 16px;
+        font: bold;
+}
+
+</string>
+          </property>
+          <property name="text">
+           <string>?</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/question.png</normaloff>:/glmixer/icons/question.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="shadertoyGeneric">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Create a new empty  ShaderToy source</string>
+        </property>
+        <property name="text">
+         <string>Empty</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="shadertoyClipboard">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Use the text in clibboard as code of the new ShaderToy</string>
+        </property>
+        <property name="text">
+         <string>Paste code</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="shadertoyFile">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Open a text file to define code of the new ShaderToy</string>
+        </property>
+        <property name="text">
+         <string>Open File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetSelectGLSLFile" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QComboBox" name="shadertoyFileList">
+           <property name="toolTip">
+            <string>Select a text file containing GLSL ShaderToy code</string>
+           </property>
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <property name="maxCount">
+            <number>10</number>
+           </property>
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertAtTop</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+           </property>
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="shadertoyOpenFile">
+           <property name="toolTip">
+            <string>Browse to open a text file (.txt, .glsl, etc.).</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/folderadd.png</normaloff>:/glmixer/icons/folderadd.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="shaderToyDeleteFile">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../icons.qrc">
+             <normaloff>:/glmixer/icons/fileclose.png</normaloff>:/glmixer/icons/fileclose.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="shadertoyLabelWarning">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Warning: &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The given code has error(s), but you will be able to fix it in the code editor later.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="indent">
+         <number>10</number>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="SizeSelectionWidget" name="sizeselection" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="validationBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SourceDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>SourceDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SizeSelectionWidget</class>
+   <extends>QWidget</extends>
+   <header>SizeSelectionWidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>sizeChanged()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>validationBox</sender>
+   <signal>accepted()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>281</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validationBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeOpenfile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>browseFreeframePlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>293</x>
+     <y>388</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFilePlugin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>widgetSelectPluginFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>388</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>widgetSelectGLSLFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>539</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededPlugin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>freeframeEmbededList</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyOpenFile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>browseShadertoyPlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>372</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededPlugin</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>335</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFilePlugin</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>335</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>409</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyGeneric</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>696</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyFile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>539</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>691</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyClipboard</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>513</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>716</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeEmbededList</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>312</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeFileList</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-11</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shadertoyFileList</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>569</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-10</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shaderToyDeleteFile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>deleteShadertoyPlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>318</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freeframeDeleteFile</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>deleteFreeframePlugin()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>388</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sizeselection</sender>
+   <signal>sizeChanged()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>updateSourcePreview()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>639</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>615</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>helpFreeFrameButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>showFreeframeHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>helpShadertoyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FFGLSourceCreationDialog</receiver>
+   <slot>showShadertoyHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>browseFreeframePlugin()</slot>
+  <slot>updateSourcePreview()</slot>
+  <slot>selectSizePreset(int)</slot>
+  <slot>browseShadertoyPlugin()</slot>
+  <slot>deleteShadertoyPlugin()</slot>
+  <slot>deleteFreeframePlugin()</slot>
+  <slot>showFreeframeHelp()</slot>
+  <slot>showShadertoyHelp()</slot>
+ </slots>
+</ui>

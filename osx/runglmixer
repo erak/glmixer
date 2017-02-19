@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Author: Bruno Herbelin
+# Startup script for GLMIxer OSX bundle
+
+GLMIXER_BUNDLE="`echo "$0" | sed -e 's/\/Contents\/MacOS\/GLMixer//'`"
+GLMIXER_RESOURCES="$GLMIXER_BUNDLE/Contents/Resources"
+
+export "DYLD_LIBRARY_PATH=$GLMIXER_RESOURCES/lib"
+export "PATH=$GLMIXER_RESOURCES/bin:$PATH"
+
+#run
+exec "$GLMIXER_RESOURCES/bin/glmixer" 

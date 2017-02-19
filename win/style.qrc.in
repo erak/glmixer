@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/style">
+        <file alias="default">${CMAKE_CURRENT_SOURCE_DIR}/../win/style.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,15 @@
+-I/usr/include
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/home/bitshift/Dev/cpp/glmixer/build/libQtProperty
+-I/home/bitshift/Dev/cpp/glmixer/libQtProperty
+-I/usr/include/qt4/QtOpenGL
+-I/usr/include/qt4/QtXml
+-DGLMIXER_VERSION=1.5
+-D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/bitshift/Dev/cpp/glmixer/build/libQtProperty/qtpropertymanager.moc
+/home/bitshift/Dev/cpp/glmixer/libQtProperty/qtpropertymanager.h

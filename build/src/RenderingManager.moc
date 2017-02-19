@@ -1,0 +1,176 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'RenderingManager.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.7)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "../../src/RenderingManager.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'RenderingManager.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.7. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_RenderingManager[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      21,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       4,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      18,   17,   17,   17, 0x05,
+      43,   39,   17,   17, 0x05,
+      85,   17,   17,   17, 0x05,
+     107,   17,   17,   17, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     130,  127,   17,   17, 0x0a,
+     158,  152,   17,   17, 0x0a,
+     186,  127,   17,   17, 0x0a,
+     198,   17,   17,   17, 0x0a,
+     212,   17,   17,   17, 0x0a,
+     233,  229,   17,   17, 0x0a,
+     266,   17,   17,   17, 0x0a,
+     287,   17,   17,   17, 0x0a,
+     310,   17,   17,   17, 0x0a,
+     348,   17,   17,   17, 0x0a,
+     388,   17,   17,   17, 0x0a,
+     426,   17,   17,   17, 0x0a,
+     465,   17,   17,   17, 0x0a,
+     492,  478,   17,   17, 0x0a,
+     531,  527,   17,   17, 0x0a,
+     578,  572,   17,   17, 0x0a,
+     606,   17,   17,   17, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_RenderingManager[] = {
+    "RenderingManager\0\0frameBufferChanged()\0"
+    "csi\0currentSourceChanged(SourceSet::iterator)\0"
+    "methodCalled(QString)\0editCurrentSource()\0"
+    "on\0setClearToWhite(bool)\0delay\0"
+    "setPreviousFrameDelay(uint)\0pause(bool)\0"
+    "clearBasket()\0clearSourceSet()\0sit\0"
+    "resetSource(SourceSet::iterator)\0"
+    "resetCurrentSource()\0refreshCurrentSource()\0"
+    "toggleUnchangeableCurrentSource(bool)\0"
+    "toggleFixAspectRatioCurrentSource(bool)\0"
+    "setOriginalAspectRatioCurrentSource()\0"
+    "setRenderingAspectRatioCurrentSource()\0"
+    "dropSource()\0alphax,alphay\0"
+    "dropSourceWithAlpha(double,double)\0"
+    "x,y\0dropSourceWithCoordinates(double,double)\0"
+    "depth\0dropSourceWithDepth(double)\0"
+    "onSourceFailure()\0"
+};
+
+void RenderingManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        RenderingManager *_t = static_cast<RenderingManager *>(_o);
+        switch (_id) {
+        case 0: _t->frameBufferChanged(); break;
+        case 1: _t->currentSourceChanged((*reinterpret_cast< SourceSet::iterator(*)>(_a[1]))); break;
+        case 2: _t->methodCalled((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->editCurrentSource(); break;
+        case 4: _t->setClearToWhite((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 5: _t->setPreviousFrameDelay((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 6: _t->pause((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: _t->clearBasket(); break;
+        case 8: _t->clearSourceSet(); break;
+        case 9: _t->resetSource((*reinterpret_cast< SourceSet::iterator(*)>(_a[1]))); break;
+        case 10: _t->resetCurrentSource(); break;
+        case 11: _t->refreshCurrentSource(); break;
+        case 12: _t->toggleUnchangeableCurrentSource((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 13: _t->toggleFixAspectRatioCurrentSource((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 14: _t->setOriginalAspectRatioCurrentSource(); break;
+        case 15: _t->setRenderingAspectRatioCurrentSource(); break;
+        case 16: _t->dropSource(); break;
+        case 17: _t->dropSourceWithAlpha((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 18: _t->dropSourceWithCoordinates((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 19: _t->dropSourceWithDepth((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 20: _t->onSourceFailure(); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData RenderingManager::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject RenderingManager::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_RenderingManager,
+      qt_meta_data_RenderingManager, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &RenderingManager::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *RenderingManager::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *RenderingManager::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_RenderingManager))
+        return static_cast<void*>(const_cast< RenderingManager*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int RenderingManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 21)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 21;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void RenderingManager::frameBufferChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void RenderingManager::currentSourceChanged(SourceSet::iterator _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void RenderingManager::methodCalled(QString _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void RenderingManager::editCurrentSource()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, 0);
+}
+QT_END_MOC_NAMESPACE

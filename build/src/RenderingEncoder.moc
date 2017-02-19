@@ -1,0 +1,233 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'RenderingEncoder.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.7)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "../../src/RenderingEncoder.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'RenderingEncoder.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.7. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_EncodingThread[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       1,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      16,   15,   15,   15, 0x05,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_EncodingThread[] = {
+    "EncodingThread\0\0encodingFinished()\0"
+};
+
+void EncodingThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        EncodingThread *_t = static_cast<EncodingThread *>(_o);
+        switch (_id) {
+        case 0: _t->encodingFinished(); break;
+        default: ;
+        }
+    }
+    Q_UNUSED(_a);
+}
+
+const QMetaObjectExtraData EncodingThread::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject EncodingThread::staticMetaObject = {
+    { &QThread::staticMetaObject, qt_meta_stringdata_EncodingThread,
+      qt_meta_data_EncodingThread, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &EncodingThread::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *EncodingThread::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *EncodingThread::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_EncodingThread))
+        return static_cast<void*>(const_cast< EncodingThread*>(this));
+    return QThread::qt_metacast(_clname);
+}
+
+int EncodingThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QThread::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void EncodingThread::encodingFinished()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+static const uint qt_meta_data_RenderingEncoder[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      12,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       4,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      18,   17,   17,   17, 0x05,
+      34,   17,   17,   17, 0x05,
+      53,   51,   17,   17, 0x05,
+      73,   17,   17,   17, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     115,  112,   17,   17, 0x0a,
+     131,  112,   17,   17, 0x0a,
+     163,  147,   17,   17, 0x0a,
+     196,  189,   17,   17, 0x2a,
+     233,  214,   17,   17, 0x0a,
+     261,   17,   17,   17, 0x0a,
+     275,  269,   17,   17, 0x0a,
+     302,   17,  296,   17, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_RenderingEncoder[] = {
+    "RenderingEncoder\0\0activated(bool)\0"
+    "processing(bool)\0,\0status(QString,int)\0"
+    "selectAspectRatio(standardAspectRatio)\0"
+    "on\0setActive(bool)\0setPaused(bool)\0"
+    "suffix,filename\0saveFile(QString,QString)\0"
+    "suffix\0saveFile(QString)\0suffix,description\0"
+    "saveFileAs(QString,QString)\0close()\0"
+    "bytes\0setBufferSize(ulong)\0ulong\0"
+    "getBufferSize()\0"
+};
+
+void RenderingEncoder::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        RenderingEncoder *_t = static_cast<RenderingEncoder *>(_o);
+        switch (_id) {
+        case 0: _t->activated((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 1: _t->processing((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->status((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 3: _t->selectAspectRatio((*reinterpret_cast< const standardAspectRatio(*)>(_a[1]))); break;
+        case 4: _t->setActive((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 5: _t->setPaused((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->saveFile((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 7: _t->saveFile((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->saveFileAs((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 9: _t->close(); break;
+        case 10: _t->setBufferSize((*reinterpret_cast< ulong(*)>(_a[1]))); break;
+        case 11: { ulong _r = _t->getBufferSize();
+            if (_a[0]) *reinterpret_cast< ulong*>(_a[0]) = _r; }  break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData RenderingEncoder::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject RenderingEncoder::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_RenderingEncoder,
+      qt_meta_data_RenderingEncoder, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &RenderingEncoder::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *RenderingEncoder::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *RenderingEncoder::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_RenderingEncoder))
+        return static_cast<void*>(const_cast< RenderingEncoder*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int RenderingEncoder::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 12)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 12;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void RenderingEncoder::activated(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void RenderingEncoder::processing(bool _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void RenderingEncoder::status(const QString & _t1, int _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void RenderingEncoder::selectAspectRatio(const standardAspectRatio _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+QT_END_MOC_NAMESPACE

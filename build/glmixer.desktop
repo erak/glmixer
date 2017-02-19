@@ -1,0 +1,15 @@
+[Desktop Entry]
+        Name=glmixer
+        Version=1.5
+        GenericName=glmixer
+        X-GNOME-FullName=glmixer
+        Comment=Graphic Live Mixer
+        Type=Application
+        Categories=Graphics
+        Path=/usr/local/bin
+        Exec=glmixer
+        Terminal=false
+        StartupNotify=true
+        Icon=/usr/local/share/icons/hicolor/scalable/apps/glmixer.svg
+        TargetEnvironment=Unity
+        GenericName[en_ZA]=glmixer

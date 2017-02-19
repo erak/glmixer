@@ -1,0 +1,2148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserPreferencesDialog</class>
+ <widget class="QDialog" name="UserPreferencesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>624</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GLMixer - User preferences</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/glmixer/icons/glmixer.png</normaloff>:/glmixer/icons/glmixer.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_15">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetMinimumSize</enum>
+   </property>
+   <item>
+    <widget class="QLabel" name="IntroTextLabel">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-weight:600;&quot;&gt;Configure GLMixer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2';&quot;&gt;Adjust the rendering parameters bellow to match your &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-style:italic;&quot;&gt;graphics hardware capabilities&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2';&quot;&gt; (OpenGL). &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;You can always return to these settings in the &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-style:italic;&quot;&gt;Preference&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt; menu. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="LayoutLeft">
+       <item>
+        <widget class="QListWidget" name="listWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="autoScrollMargin">
+          <number>16</number>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectItems</enum>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="textElideMode">
+          <enum>Qt::ElideNone</enum>
+         </property>
+         <property name="resizeMode">
+          <enum>QListView::Fixed</enum>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="viewMode">
+          <enum>QListView::IconMode</enum>
+         </property>
+         <property name="uniformItemSizes">
+          <bool>true</bool>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         <property name="currentRow">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Render</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignLeading|AlignVCenter</set>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/display.png</normaloff>:/glmixer/icons/display.png</iconset>
+          </property>
+          <property name="flags">
+           <set>ItemIsSelectable|ItemIsEnabled</set>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Export</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/movieformat.png</normaloff>:/glmixer/icons/movieformat.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sources</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/edit-cut.png</normaloff>:/glmixer/icons/edit-cut.png</iconset>
+          </property>
+          <property name="flags">
+           <set>ItemIsSelectable|ItemIsEnabled</set>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Inputs</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/users.png</normaloff>:/glmixer/icons/users.png</iconset>
+          </property>
+          <property name="flags">
+           <set>ItemIsSelectable|ItemIsEnabled</set>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Options</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/glmixer/icons/tools.png</normaloff>:/glmixer/icons/tools.png</iconset>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="factorySettingsButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Reset all</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="LayoutRight">
+       <item>
+        <widget class="QStackedWidget" name="stackedPreferences">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="PageRendering">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QGroupBox" name="Resolution">
+             <property name="title">
+              <string>Rendering resolution</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Se&amp;lect a category of resolutions:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>resolutionTable</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="resolutionTable">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>Select a category of resolutions; the resolution of the output rendering will depend on its aspect ratio</string>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="tabKeyNavigation">
+                 <bool>false</bool>
+                </property>
+                <property name="showDropIndicator" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="dragDropOverwriteMode">
+                 <bool>false</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectRows</enum>
+                </property>
+                <property name="textElideMode">
+                 <enum>Qt::ElideNone</enum>
+                </property>
+                <property name="showGrid">
+                 <bool>true</bool>
+                </property>
+                <property name="cornerButtonEnabled">
+                 <bool>false</bool>
+                </property>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>110</number>
+                </attribute>
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                 <number>26</number>
+                </attribute>
+                <attribute name="verticalHeaderHighlightSections">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <row>
+                 <property name="text">
+                  <string>Basic</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Low</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Medium</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>High</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Ultra</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Quad</string>
+                 </property>
+                </row>
+                <column>
+                 <property name="text">
+                  <string notr="true">4:3</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string notr="true">3:2</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string notr="true">16:10</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string notr="true">16:9</string>
+                 </property>
+                </column>
+                <item row="0" column="0">
+                 <property name="text">
+                  <string notr="true">640x480 VGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="0" column="1">
+                 <property name="text">
+                  <string notr="true">720x480 NTSC</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="0" column="2">
+                 <property name="text">
+                  <string notr="true">800x480 WVGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="0" column="3">
+                 <property name="text">
+                  <string notr="true">848x480 WVGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="1" column="0">
+                 <property name="text">
+                  <string notr="true">768x576 PAL</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="1" column="1">
+                 <property name="text">
+                  <string notr="true">864x576</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>false</italic>
+                  </font>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>88</red>
+                    <green>88</green>
+                    <blue>88</blue>
+                   </color>
+                  </brush>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="1" column="2">
+                 <property name="text">
+                  <string notr="true">912x570</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>true</italic>
+                  </font>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>88</red>
+                    <green>88</green>
+                    <blue>88</blue>
+                   </color>
+                  </brush>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="1" column="3">
+                 <property name="text">
+                  <string notr="true">1024x576 WPAL</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="2" column="0">
+                 <property name="text">
+                  <string notr="true">800x600 SVGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="2" column="1">
+                 <property name="text">
+                  <string notr="true">900x600</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>false</italic>
+                  </font>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>88</red>
+                    <green>88</green>
+                    <blue>88</blue>
+                   </color>
+                  </brush>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="2" column="2">
+                 <property name="text">
+                  <string notr="true">960x600</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>true</italic>
+                  </font>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>88</red>
+                    <green>88</green>
+                    <blue>88</blue>
+                   </color>
+                  </brush>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="2" column="3">
+                 <property name="text">
+                  <string notr="true">1088x612</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <italic>true</italic>
+                  </font>
+                 </property>
+                 <property name="foreground">
+                  <brush brushstyle="NoBrush">
+                   <color alpha="255">
+                    <red>88</red>
+                    <green>88</green>
+                    <blue>88</blue>
+                   </color>
+                  </brush>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="3" column="0">
+                 <property name="text">
+                  <string notr="true">1024x768 XGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="3" column="1">
+                 <property name="text">
+                  <string notr="true">1152x768</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="3" column="2">
+                 <property name="text">
+                  <string notr="true">1280x800 WXGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="3" column="3">
+                 <property name="text">
+                  <string notr="true">1280x720 HD</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="4" column="0">
+                 <property name="text">
+                  <string notr="true">1600x1200 UXGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="4" column="1">
+                 <property name="text">
+                  <string notr="true">1440x960</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="4" column="2">
+                 <property name="text">
+                  <string notr="true">1920x1200 WUXGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="4" column="3">
+                 <property name="text">
+                  <string notr="true">1920x1080 FHD</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="5" column="0">
+                 <property name="text">
+                  <string notr="true">2048x1536 QXGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="5" column="1">
+                 <property name="text">
+                  <string notr="true">1920x1280</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="5" column="2">
+                 <property name="text">
+                  <string notr="true">2048x1280</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+                <item row="5" column="3">
+                 <property name="text">
+                  <string notr="true">2048x1152 QWXGA</string>
+                 </property>
+                 <property name="flags">
+                  <set>ItemIsSelectable|ItemIsEnabled</set>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="Performance">
+             <property name="title">
+              <string>OpenGL Performance</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutFrameRate">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="labelFrameRate">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Fra&amp;me rate</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>updatePeriod</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSlider" name="updatePeriod">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="toolTip">
+                   <string>Rendering engine will target this frame rate for optimal speed</string>
+                  </property>
+                  <property name="minimum">
+                   <number>16</number>
+                  </property>
+                  <property name="maximum">
+                   <number>33</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>2</number>
+                  </property>
+                  <property name="value">
+                   <number>16</number>
+                  </property>
+                  <property name="sliderPosition">
+                   <number>16</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="invertedAppearance">
+                   <bool>true</bool>
+                  </property>
+                  <property name="invertedControls">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="frameRateString">
+                  <property name="text">
+                   <string notr="true"> fps</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_20">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The program tries to keep this fixed frame rate (frames per seconds).&lt;/p&gt;&lt;p&gt;If the graphics hardware cannot manage, an indicator bar will be shown in the top-right corner of themain window.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>Options for low-end graphics hardware:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout">
+                  <item row="0" column="0">
+                   <widget class="QCheckBox" name="disableFiltering">
+                    <property name="toolTip">
+                     <string>Disable filters if the rendering is too slow; the filters will not be available anymore.</string>
+                    </property>
+                    <property name="text">
+                     <string>Disable filters </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QCheckBox" name="disableBlitFrameBuffer">
+                    <property name="toolTip">
+                     <string>Disable it if the rendering output window does not show anything. </string>
+                    </property>
+                    <property name="text">
+                     <string>Disable Frame Buffer Blit</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QCheckBox" name="disablePixelBufferObject">
+                    <property name="toolTip">
+                     <string>Disable pixel buffer object if your graphics hardware does not accelerate this extension in hardware.</string>
+                    </property>
+                    <property name="text">
+                     <string>Disable Pixel Buffer Objects</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="disableOutputRecording">
+                    <property name="text">
+                     <string>Disable outputs when recording</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="title">
+              <string>Fullscreen</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>Target computer monitor </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="fullscreenMonitor">
+                <property name="toolTip">
+                 <string>Select the system monitor for fullscreen of the output window</string>
+                </property>
+                <property name="currentIndex">
+                 <number>-1</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacerRendering">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="PageRecording">
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QGroupBox" name="groupBoxFormat">
+             <property name="title">
+              <string>Recording</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Fi&amp;le format (codec)</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>recordingFormatSelection</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QComboBox" name="recordingFormatSelection">
+                  <property name="toolTip">
+                   <string>Select the recording Codec</string>
+                  </property>
+                  <property name="currentIndex">
+                   <number>4</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string notr="true">AVI       (RAW video)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">AVI       (FFVHUFF)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">MPG   (MPEG1)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">MPG   (MPEG2)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">MP4    (MPEG4)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">WMV   (Windows Media Video 8)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">FLV      (Flash Video FLV1)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="label_17">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAW and FFVHUFF are looseless but produce large files (slower).&lt;/p&gt;&lt;p&gt;Other codecs are lossy but are compressed and more portable.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="text">
+                   <string notr="true"/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>true</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                  <property name="indent">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="targetfps">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Fra&amp;me rate  </string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>recordingUpdatePeriod</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSlider" name="recordingUpdatePeriod">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="toolTip">
+                   <string>Set the recording frame rate</string>
+                  </property>
+                  <property name="minimum">
+                   <number>33</number>
+                  </property>
+                  <property name="maximum">
+                   <number>65</number>
+                  </property>
+                  <property name="value">
+                   <number>40</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="invertedAppearance">
+                   <bool>true</bool>
+                  </property>
+                  <property name="invertedControls">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="recordingFrameRateString">
+                  <property name="text">
+                   <string notr="true">25 fps</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_18">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Buffer size</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QSlider" name="recordingBufferSize">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How much RAM it can use to store images before writing to disk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="minimum">
+                   <number>0</number>
+                  </property>
+                  <property name="maximum">
+                   <number>100</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>5</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>50</number>
+                  </property>
+                  <property name="value">
+                   <number>20</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="tickPosition">
+                   <enum>QSlider::NoTicks</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QLabel" name="recordingBuffersizeString">
+                  <property name="minimumSize">
+                   <size>
+                    <width>70</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string notr="true">300 MB</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="recordingFolderBox">
+                <property name="toolTip">
+                 <string>Save recordings automatically without prompting
+the user to select a file name</string>
+                </property>
+                <property name="title">
+                 <string>Automatic saving in a folder</string>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QLineEdit" name="recordingFolderLine">
+                   <property name="toolTip">
+                    <string>Location where the files are saved</string>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">*[exists=&quot;false&quot;] { background-color: yellow }</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="recordingFolderButton">
+                   <property name="toolTip">
+                    <string>Select a folder</string>
+                   </property>
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../icons.qrc">
+                     <normaloff>:/glmixer/icons/folderadd.png</normaloff>:/glmixer/icons/folderadd.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="sharedMemoryBox">
+             <property name="title">
+              <string>Shared Memory</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Color depth</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>sharedMemoryColorDepth</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="sharedMemoryColorDepth">
+                  <property name="toolTip">
+                   <string>Pixel format for shared memory</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string notr="true">RGB 16bits</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">RBG 24bits</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">RGBA 32bits</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_19">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="toolTip">
+                   <string>NB: High color depth lead to slower copy and risk of low frame rate.</string>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacerRecording">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="PageSources">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QGroupBox" name="groupBoxSource">
+             <property name="toolTip">
+              <string>Initial properties at the creation of sources</string>
+             </property>
+             <property name="title">
+              <string>Source default properties</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="SourcePropertyBrowser" name="defaultProperties" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBoxDrop">
+             <property name="title">
+              <string>Dropping options</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QCheckBox" name="defaultStartPlaying">
+                <property name="toolTip">
+                 <string>Check if you want to source to start playing when dropped.</string>
+                </property>
+                <property name="text">
+                 <string>Play immediately after drop</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutScaling">
+                <item>
+                 <widget class="QLabel" name="ScalingLabel">
+                  <property name="text">
+                   <string>Sca&amp;ling of sources </string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>scalingModeSelection</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="scalingModeSelection">
+                  <property name="toolTip">
+                   <string>Select how the source scale will be adjusted when dropped.</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Cropped (keep source aspect ratio)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Centered (keep source aspect ratio)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Scaled (use rendering aspect ratio)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Pixel (original size inside rendering buffer)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBoxLoopback">
+             <property name="title">
+              <string>Loopback source</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>The rendering loop-back source shows the frame rendered N frame(s) before; </string>
+                </property>
+                <property name="text">
+                 <string>Recursive fra&amp;me rate</string>
+                </property>
+                <property name="buddy">
+                 <cstring>loopbackSkippedFrames</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="loopbackSkippedFrames">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Target frame rate for recursive loopback source.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>13</number>
+                </property>
+                <property name="pageStep">
+                 <number>1</number>
+                </property>
+                <property name="value">
+                 <number>1</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>true</bool>
+                </property>
+                <property name="invertedControls">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="loopbackFPS">
+                <property name="text">
+                 <string notr="true"> fps</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_25">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recurrent loopback source can be refreshed with a framerate lower than the rendering framerate (skipping frames).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBoxVideo">
+             <property name="title">
+              <string>Video Source</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Maximum buffer size</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSlider" name="MemoryUsagePolicySlider">
+                  <property name="toolTip">
+                   <string>Select maximum amount of RAM used for buffers per video file.</string>
+                  </property>
+                  <property name="maximum">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>25</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="MemoryUsageMaximumLabel">
+                  <property name="text">
+                   <string notr="true">111 MB</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buffers are used to load frames in memory before display.&lt;br/&gt;Indicate how much RAM you can afford for each video file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacerSource">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="PageInterface">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QGroupBox" name="MouseButtonsGroupBox">
+             <property name="title">
+              <string>Mouse (or stylus) buttons</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="instructions1">
+                <property name="text">
+                 <string>To specify how you want to perform an action, place the cursor on the</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="instructions2">
+                <property name="text">
+                 <string>corresponding box  and clic using the mouse button(s) you want:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutTest">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: palette(midlight);
+font: 75;</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Plain</enum>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButtonReset">
+                  <property name="toolTip">
+                   <string>Reset all actions</string>
+                  </property>
+                  <property name="text">
+                   <string>Reset</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_12">
+                  <property name="toolTip">
+                   <string>You can use  multiple buttons and modifier keys (SHIFT, CMD, ALT, etc.)</string>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../icons.qrc">:/glmixer/icons/info.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="TestButtonFrame" name="ButtonTestFrame" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>CrossCursor</cursorShape>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Context menu on background  </string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="selectionViewContextMenu">
+                  <property name="toolTip">
+                   <string>Choose which context menu is shown.</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Zooming</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../icons.qrc">
+                     <normaloff>:/glmixer/icons/zoom-in.png</normaloff>:/glmixer/icons/zoom-in.png</iconset>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Cursor selection</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="../icons.qrc">
+                     <normaloff>:/glmixer/icons/normal-cursor.png</normaloff>:/glmixer/icons/normal-cursor.png</iconset>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBoxWheel">
+             <property name="title">
+              <string>Mouse wheel zoom</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayoutWheelOptions">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayoutSpeed">
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="text">
+                     <string>Speed</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>speedZoom</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSlider" name="speedZoom">
+                    <property name="toolTip">
+                     <string>How fast to zoom in or out with the mouse wheel</string>
+                    </property>
+                    <property name="minimum">
+                     <number>20</number>
+                    </property>
+                    <property name="maximum">
+                     <number>220</number>
+                    </property>
+                    <property name="singleStep">
+                     <number>5</number>
+                    </property>
+                    <property name="pageStep">
+                     <number>20</number>
+                    </property>
+                    <property name="value">
+                     <number>120</number>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="invertedAppearance">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="centeredZoom">
+                  <property name="toolTip">
+                   <string>Zoom in at the cursor position when using the mouse wheel</string>
+                  </property>
+                  <property name="text">
+                   <string>Zoom to cursor position</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="TestWheelFrame" name="zoomTestFrame" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="cursor">
+                 <cursorShape>CrossCursor</cursorShape>
+                </property>
+                <property name="toolTip">
+                 <string>Try the zoom using your mouse wheel here.</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_9">
+             <property name="title">
+              <string>Open Sound Control</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QCheckBox" name="enableOSC">
+                <property name="text">
+                 <string>Enable UDP server</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_24">
+                <property name="text">
+                 <string>Port</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="OSCPort">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="minimum">
+                 <number>1000</number>
+                </property>
+                <property name="maximum">
+                 <number>9999</number>
+                </property>
+                <property name="singleStep">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>7000</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="OSCHelp">
+                <property name="text">
+                 <string>...</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../icons.qrc">
+                  <normaloff>:/glmixer/icons/question.png</normaloff>:/glmixer/icons/question.png</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacerInterface">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="PageOptions">
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QGroupBox" name="LanguageGroupBox">
+             <property name="title">
+              <string>Language</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QComboBox" name="languageSelection">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>English (default)</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="SystemGroupBox">
+             <property name="title">
+              <string>System</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QCheckBox" name="restoreLastSession">
+                <property name="toolTip">
+                 <string>Re-open the last session when launching GLMixer.</string>
+                </property>
+                <property name="text">
+                 <string>Restore previous session on start</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="saveExitSession">
+                <property name="toolTip">
+                 <string>Save the current session on exit (if possible)</string>
+                </property>
+                <property name="text">
+                 <string>Save session on exit</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="useCustomDialogs">
+                <property name="toolTip">
+                 <string>Use GLMixer improved dialogs (instead of operating system native dialogs)</string>
+                </property>
+                <property name="statusTip">
+                 <string>Use GLMixer improved dialogs (instead of operating system native dialogs)</string>
+                </property>
+                <property name="text">
+                 <string>Show preview in file dialogs</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="displayTimeAsFrame">
+                <property name="toolTip">
+                 <string>Shows time information as frame count instead of hh:mm:ss.</string>
+                </property>
+                <property name="text">
+                 <string>Show frame numbers instead of time</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="displayFramerate">
+                <property name="toolTip">
+                 <string>Shows the framerate in the upper right corner.</string>
+                </property>
+                <property name="text">
+                 <string>Display framerate</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="VisualsGroupBox">
+             <property name="title">
+              <string>Interface</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QCheckBox" name="antiAliasing">
+                <property name="toolTip">
+                 <string>Use anti alisasing for rendering interface (improves visual appearance)</string>
+                </property>
+                <property name="statusTip">
+                 <string>Use anti alisasing for rendering interface (improves visual appearance)</string>
+                </property>
+                <property name="text">
+                 <string>Anti-aliasing</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="0" column="0">
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>22</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="1" colspan="2">
+                 <widget class="QLabel" name="label_16">
+                  <property name="text">
+                   <string>Transparency style</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label_14">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../images.qrc">:/glmixer/images/stippling_1.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QSlider" name="stipplingSlider">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>10</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>2</number>
+                  </property>
+                  <property name="value">
+                   <number>10</number>
+                  </property>
+                  <property name="tracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="invertedAppearance">
+                   <bool>true</bool>
+                  </property>
+                  <property name="invertedControls">
+                   <bool>false</bool>
+                  </property>
+                  <property name="tickPosition">
+                   <enum>QSlider::TicksAbove</enum>
+                  </property>
+                  <property name="tickInterval">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="3">
+                 <widget class="QLabel" name="label_15">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../images.qrc">:/glmixer/images/stippling_2.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1" colspan="2">
+                 <widget class="QLabel" name="label_23">
+                  <property name="text">
+                   <string>Icon size</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="label_21">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../images.qrc">:/glmixer/images/iconsmall.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="2">
+                 <widget class="QSlider" name="iconSizeSlider">
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>50</number>
+                  </property>
+                  <property name="tracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="3">
+                 <widget class="QLabel" name="label_22">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../images.qrc">:/glmixer/images/iconlarge.png</pixmap>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>130</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutButtonBox">
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="defaultValuesButton">
+           <property name="text">
+            <string>Defaults values</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDialogButtonBox" name="DecisionButtonBox">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="standardButtons">
+            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SourcePropertyBrowser</class>
+   <extends>QWidget</extends>
+   <header location="global">SourcePropertyBrowser.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TestButtonFrame</class>
+   <extends>QWidget</extends>
+   <header>testbuttonframe.h</header>
+   <container>1</container>
+   <slots>
+    <signal>inputChanged(QString)</signal>
+    <slot>reset()</slot>
+    <slot>unset()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>TestWheelFrame</class>
+   <extends>QWidget</extends>
+   <header>testwheelframe.h</header>
+   <container>1</container>
+   <slots>
+    <slot>setSpeed(int)</slot>
+    <slot>setCentered(bool)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icons.qrc"/>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>DecisionButtonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>UserPreferencesDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>611</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DecisionButtonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>UserPreferencesDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>611</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedPreferences</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>defaultValuesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserPreferencesDialog</receiver>
+   <slot>restoreDefaultPreferences()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonTestFrame</sender>
+   <signal>inputChanged(QString)</signal>
+   <receiver>label_11</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>456</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonReset</sender>
+   <signal>clicked()</signal>
+   <receiver>ButtonTestFrame</receiver>
+   <slot>unset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>563</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>456</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>factorySettingsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>UserPreferencesDialog</receiver>
+   <slot>restoreAllDefaultPreferences()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>598</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-13</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>speedZoom</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>zoomTestFrame</receiver>
+   <slot>setSpeed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>594</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>centeredZoom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>zoomTestFrame</receiver>
+   <slot>setCentered(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>373</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>594</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enableOSC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>OSCPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>429</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>restoreDefaultPreferences()</slot>
+  <slot>restoreAllDefaultPreferences()</slot>
+ </slots>
+</ui>
