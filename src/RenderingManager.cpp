@@ -216,8 +216,6 @@ RenderingManager::RenderingManager() :
     _spoutEnabled = false;
     _spoutInitialized = false;
 #endif
-
-    // stream_.start();
     
 
 #ifdef GLM_UNDO
@@ -247,8 +245,6 @@ RenderingManager::~RenderingManager() {
 
     if (_switcher)
         delete _switcher;
-
-    // stream_.stop();
 
     qDebug() << "RenderingManager" << QChar(124).toLatin1() << "All clear.";
 }
@@ -561,7 +557,8 @@ void RenderingManager::postRenderToFrameBuffer() {
 
 #endif // SPOUT
 
-    // stream_.send();
+    // Post to stream
+    stream_.post();
     
 
     // restore state

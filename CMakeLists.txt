@@ -149,7 +149,7 @@ find_package( OpenGL REQUIRED)
 set( GLMIXER_LIBRARIES  ${OPENGL_LIBRARY})
 
 find_package(Boost REQUIRED)
-set( GLMIXER_LIBRARIES boost_system ${GLMIXER_LIBRARIES})
+set( GLMIXER_LIBRARIES boost_system boost_thread ${GLMIXER_LIBRARIES})
 
 
 # find_library(FOUNDATION_LIBRARY Foundation REQUIRED)
