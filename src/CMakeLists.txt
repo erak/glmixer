@@ -227,8 +227,6 @@ if(USE_NVIDIA_CUDA)
     message( STATUS "Using CUDA")
 endif(USE_NVIDIA_CUDA)
 
-# if we use V4l2
-include_directories(${LIBV4L2CPP_SOURCE_DIR}/inc )
 
 # if History Management was set
 if(USE_HISTORY_MANAGEMENT)
@@ -354,10 +352,9 @@ ENDIF(APPLE)
 
 # link the target against the libraries.
 if(USE_NVIDIA_CUDA)
-    target_link_libraries(${GLMIXER_BINARY} QtProperty QtColorPicker OSCPack V4l2cpp CUDADecoder ${GLMIXER_LIBRARIES} ${QT_LIBRARIES} ${CUDA_LIBRARIES})
+    target_link_libraries(${GLMIXER_BINARY} QtProperty QtColorPicker OSCPack CUDADecoder ${GLMIXER_LIBRARIES} ${QT_LIBRARIES} ${CUDA_LIBRARIES})
 else(USE_NVIDIA_CUDA)
-    message(V4l2cpp)
-    target_link_libraries(${GLMIXER_BINARY} QtProperty QtColorPicker OSCPack V4l2cpp ${GLMIXER_LIBRARIES} ${QT_LIBRARIES})
+    target_link_libraries(${GLMIXER_BINARY} QtProperty QtColorPicker OSCPack ${GLMIXER_LIBRARIES} ${QT_LIBRARIES})
 endif(USE_NVIDIA_CUDA)
 
 

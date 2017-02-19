@@ -407,7 +407,6 @@ endif(GLEW_LIBRARY)
 add_subdirectory(libQtProperty)
 add_subdirectory(libQtColorPicker)
 add_subdirectory(libOSCPack)
-add_subdirectory(libv4l2cpp)
 
 if(USE_FREEFRAMEGL)
     message( STATUS "Using FreeFrameGL")

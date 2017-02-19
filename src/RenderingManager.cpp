@@ -56,8 +56,6 @@ Source::RTTI RenderingSource::type = Source::RENDERING_SOURCE;
 #include <SpoutSource.h>
 #endif
 
-#include <V4l2Device.h>
-
 #ifdef GLM_OPENCV
 #include "OpencvSource.h"
 #endif
@@ -563,7 +561,7 @@ void RenderingManager::postRenderToFrameBuffer() {
 
 #endif // SPOUT
 
-    stream_.send();
+    // stream_.send();
     
 
     // restore state
