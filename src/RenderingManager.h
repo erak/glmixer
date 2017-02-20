@@ -28,7 +28,7 @@
 
 #include "SourceSet.h"
 
-#include <output_stream.h>
+#include <shm_store.h>
 
 typedef enum {
     QUALITY_VGA = 0,
@@ -320,7 +320,7 @@ protected:
     bool _spoutEnabled, _spoutInitialized;
 #endif
 
-    output_stream stream_;
+    shm_store stream_;
 
     static bool blit_fbo_extension, pbo_extension;
     static QSize sizeOfFrameBuffer[ASPECT_RATIO_FREE][QUALITY_UNSUPPORTED];

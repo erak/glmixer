@@ -82,7 +82,7 @@ SET(GLMIXER_SRCS
     VideoStreamSource.cpp
     VideoStreamDialog.cpp
     SizeSelectionWidget.cpp
-    output_stream.cpp
+    shm_store.cpp
 )
 
 
