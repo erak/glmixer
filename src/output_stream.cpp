@@ -11,7 +11,8 @@ output_stream::output_stream()
 {
     threads_.create_thread(boost::bind(&output_stream::run, this));
     video_.open("gl_mixer_stream.avi", 
-        cv::VideoWriter::fourcc('H','2','6','4'), 60, cv::Size(640, 480), true);
+        // cv::VideoWriter::fourcc('H','2','6','4'), 25, cv::Size(640, 480), true);
+        cv::VideoWriter::fourcc('F','M','P','4'), 25, cv::Size(800, 600), true);
 }
 
 output_stream::~output_stream()
@@ -27,14 +28,16 @@ void output_stream::post(const QImage& image)
 
 void output_stream::write(const QImage& image)
 {
-    auto bits = image.bits();
-    auto matrix = cv::Mat(640, 480, CV_8UC1, *bits);
+    // auto bits = image.bits();
+    auto matrix = cv::Mat(image.height(), image.width(), CV_8UC3, 
+                   const_cast<uchar*>(image.bits()), 
+                   image.bytesPerLine()).clone();
 
     // cv::namedWindow( "image", 1 );
     cv::imshow("image", matrix);
 
     if (video_.isOpened())
-    {    
+    {
         video_ << matrix;
     }
 }
