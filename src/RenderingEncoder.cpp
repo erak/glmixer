@@ -211,7 +211,7 @@ RenderingEncoder::RenderingEncoder(QObject * parent): QObject(parent), started(f
     temporaryFileName = "__temp__";
     setEncodingFormat(FORMAT_AVI_FFVHUFF);
     // init file saving
-    setAutomaticSavingMode(false);
+    setAutomaticSavingMode(true);
 
     encoder = NULL;
 }

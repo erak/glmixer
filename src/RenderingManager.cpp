@@ -559,8 +559,7 @@ void RenderingManager::postRenderToFrameBuffer() {
 
     // Post to stream
     QImage fboImage(_fbo->toImage());
-    QImage image(fboImage.constBits(), fboImage.width(), fboImage.height(), QImage::Format_ARGB32);
-    stream_.post(image);
+    stream_.post(fboImage);
     
 
     // restore state
