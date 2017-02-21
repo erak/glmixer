@@ -35,7 +35,8 @@ private:
     boost::thread_group threads_;
 
     std::shared_ptr<managed_shared_memory> segment_;
+    std::unique_ptr<cv::Mat> temp_texture_;
 
-    size_t* texture_;
-    size_t counter_;
+    cv::Mat* texture_;
+    size_t* index_;
 };
