@@ -33,3 +33,6 @@
 
 .vscode
 build-debug/
+build-default/
+build-release/
+
