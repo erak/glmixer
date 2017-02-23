@@ -10,12 +10,11 @@ boost::mutex g_stream_lock;
 shm_store::shm_store()
     : io_service_(new boost::asio::io_service)
     , work_(new boost::asio::io_service::work(*io_service_))
-    , temp_texture_(new cv::Mat())
 {
     shared_memory_object::remove("glmtexture");
 
     segment_.reset(new managed_shared_memory(create_only, "glmtexture", 65536));
-    texture_ = segment_->construct<cv::Mat>("tex")(*temp_texture_);
+    texture_ = segment_->construct<cv::Mat>("tex")(cv::Mat());
     index_ = segment_->construct<size_t>("index")(0);
 
     threads_.create_thread(boost::bind(&shm_store::run, this));
@@ -42,9 +41,16 @@ void shm_store::write(const QImage& image)
     // auto bits = image.bits();
     // QImage image(image.constBits(), image.width(), image.height(), QImage::Format_ARGB32);
     
-    temp_texture_.reset(new cv::Mat(image.height(), image.width(), CV_8UC3,
-                        const_cast<uchar*>(image.bits()),
-                        image.bytesPerLine())/*.clone()*/);
+//    *texture_ = cv::Mat(image.height(), image.width(), CV_8UC3,
+//                        const_cast<uchar*>(image.bits()),
+//                        image.bytesPerLine()).clone();
+//    auto matrix = cv::Mat(image.height(), image.width(), CV_8UC3,
+//                          const_cast<uchar*>(image.bits()),
+//                          image.bytesPerLine());
+    auto bytes = const_cast<uchar*>(image.bits());
+
+    std::memcpy(bytes, texture_, image.height() * image.width());
+
     *index_ = *index_ + 1;
 
 //    cv::imshow("image", *texture_);
